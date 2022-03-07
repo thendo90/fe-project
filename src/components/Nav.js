@@ -24,8 +24,8 @@ export default function Nav() {
           Users
         </Link>
       </li>
-      <li>
-        <Link className="link-myacc" to="/myacc">
+      <li className="li-myacc">
+        <Link className="link" to="/myacc">
           myAcc
         </Link>
       </li>
