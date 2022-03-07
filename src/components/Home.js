@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 import ArticleList from "./ArticleList";
 
 export default function Home() {
+  const { loggedInUser } = useContext(UserContext);
+
   return (
-    <div classname="Home">
-      <h3>Here's the news for today USERNAME</h3>
+    <div className="Home">
+      <h3>Here's the news for today {loggedInUser}</h3>
       <ArticleList />
     </div>
   );
