@@ -1,8 +1,9 @@
 .App {
   text-align: center;
+  width: 100%;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +36,70 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.navbar {
+  border: solid 1px #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  display: flex;
+  padding-inline-start: 10px;
+}
+
+li {
+  /* display: block; */
+  /* margin: 3px; */
+  /* padding: 5px; */
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  border: 3px solid #333;
+  background-color: #333;
+  float: left;
+}
+.link:hover {
+  background-color: gray;
+  border: 3px solid gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.link-myacc {
+  display: flex;
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  border: 3px solid #333;
+  background-color: #333;
+  right: 0%;
+  float: right;
+  padding-inline-end: 10px;
+}
+.link-myacc:hover {
+  background-color: gray;
+  border: 3px solid gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.bottombar {
+  width: 100%;
+
+  float: right;
+  position: absolute;
+  top: 96%;
+  list-style-type: none;
+  border: solid 1px #333;
+  margin: 0;
+  padding: 0;
+
+  background-color: #333;
+  display: flex;
+  flex-direction: row-reverse;
 }
