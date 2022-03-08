@@ -38,9 +38,11 @@ export default function ArticleList({ topic }) {
 
   if (loading) return <h1 className="loading">loading content</h1>;
   return (
-    <div className="ArticleList">
-      <p>Displaying {articleList.length} articles</p>
-      <p>
+    <article className={`ArticleList ${topic}`}>
+      <p className={`articles ${topic}`}>
+        Displaying {articleList.length} articles
+      </p>
+      <p className={`articles ${topic}`}>
         Page {page} of {Math.ceil(total / 10)}
       </p>
       {articleList.map((article) => {
@@ -67,6 +69,6 @@ export default function ArticleList({ topic }) {
       </button>
 
       <br></br>
-    </div>
+    </article>
   );
 }

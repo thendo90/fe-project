@@ -7,7 +7,7 @@ export default function TopicPage() {
 
   return (
     <>
-      <h1>{topic}</h1>
+      <h1 className={topic}>{topic}</h1>
       <ArticleList topic={topic} />
     </>
   );
