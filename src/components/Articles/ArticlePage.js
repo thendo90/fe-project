@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getArticleById } from "./api";
+import { getArticleById } from "../api/api";
 
 export default function ArticlePage() {
   const { article_id } = useParams();

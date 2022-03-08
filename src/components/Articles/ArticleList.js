@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getArticles } from "./api";
+import { getArticles } from "../api/api";
 import ArticleCard from "./ArticleCard";
 
 export default function ArticleList() {
