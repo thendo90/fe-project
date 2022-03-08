@@ -5,5 +5,10 @@ import ArticleList from "../Articles/ArticleList";
 export default function TopicPage() {
   const { topic } = useParams();
 
-  return <ArticleList topic={topic} />;
+  return (
+    <>
+      <h1>{topic}</h1>
+      <ArticleList topic={topic} />
+    </>
+  );
 }

@@ -28,6 +28,7 @@ export default function ArticleList({ topic }) {
       return currentPage + 1;
     });
   };
+
   const handlePrev = () => {
     setLoading(true);
     setPage((currentPage) => {

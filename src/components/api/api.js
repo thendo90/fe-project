@@ -25,13 +25,3 @@ export function getTopics() {
       return data;
     });
 }
-
-// export function getArticlesByTopic(topic) {
-//   return axios
-//     .get("https://toms-nc-news-api.herokuapp.com/api/articles", {
-//       params: { topic },
-//     })
-//     .then(({ data }) => {
-//       return data;
-//     });
-// }
