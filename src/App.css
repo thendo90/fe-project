@@ -84,6 +84,20 @@ div.cooking {
   background-color: white;
 }
 p.cooking {
+  font-size: larger;
+  /* color: white; */
+}
+h3.undefined {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-transform: uppercase;
+}
+div.undefined {
+  background-color: white;
+}
+p.undefined {
+  font-size: larger;
   /* color: white; */
 }
 
@@ -110,6 +124,7 @@ div.coding {
   background-color: white;
 }
 p.coding {
+  font-size: larger;
   color: white;
 }
 
@@ -122,17 +137,21 @@ h1.football {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url(https://images.unsplash.com/photo-1552318965-6e6be7484ada?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb3RiYWxsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60);
+  background-image: url(https://images.unsplash.com/photo-1587329310686-91414b8e3cb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80);
 }
 article.football {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url(https://images.unsplash.com/photo-1552318965-6e6be7484ada?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb3RiYWxsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60);
+  background-image: url(https://images.unsplash.com/photo-1587329310686-91414b8e3cb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80);
 }
 div.football {
   background-color: white;
+}
+p.football {
+  font-size: larger;
+  color: black;
 }
 
 .navbar {
