@@ -59,24 +59,14 @@
 }
 
 .navbar {
-  width: 100%;
-  position: fixed;
-  align-items: center;
-  border: solid 1px #333;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
   background-color: #333;
-  display: flex;
-  padding-inline-start: 10px;
 }
 
-li {
-  align-items: center;
-  /* display: block; */
-  /* margin: 3px; */
-  /* padding: 5px; */
-}
 .li-myacc {
   display: flex;
   flex-direction: row-reverse;
@@ -91,12 +81,13 @@ li {
   background-color: #333;
   float: left;
 }
+
 .link:hover {
+  text-transform: uppercase;
+  border-radius: 5px;
   align-items: center;
   background-color: gray;
   border: 3px solid gray;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 .article__card {
   margin-top: 5%;
@@ -222,6 +213,6 @@ article-votes-page {
 }
 
 h1 {
-  padding-top: 15%;
+  padding-top: 10%;
   margin-top: 0;
 }
