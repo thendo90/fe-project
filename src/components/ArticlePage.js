@@ -13,26 +13,19 @@ export default function ArticlePage() {
       setLoading(false);
     });
   }, []);
+
   if (loading) return <h1 className="loading">loading content</h1>;
   return (
-    <div className="article__page">
-      <h4 className="article-header">{article.title}</h4>
-      <p className="article-author">
-        Author: <br />
-        {article.author}
-      </p>
-      <p className="article-topic">
-        Topic: <br />
-        {article.topic}
-      </p>
-      <p className="article-comments">
-        Comments: <br />
-        {article.comment_count}
-      </p>
-      <p className="article-votes">
+    <dl className="article__page">
+      <h3 className="article-header-page">{article.title}</h3>
+      <h4 className="article-author-page">{article.author}</h4>
+      <dt className="article-body-page">{article.body}</dt>
+
+      <dt className="article-comments-page">{article.comment_count}</dt>
+      <dt className="article-votes-page">
         Votes: <br />
         {article.votes}
-      </p>
-    </div>
+      </dt>
+    </dl>
   );
 }
