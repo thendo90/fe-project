@@ -19,14 +19,14 @@ export default function ArticlePage() {
   }, []);
 
   useEffect(() => {
-    // following logic needed to "unpatch" the api
+    // following logic needed to "unpatch" the api when unvoting
     let patchVotes = votes;
     if (currVote === -1 && votes === 0) {
       // occurs on decrement after an increment
       patchVotes = -1;
     }
     if (currVote === 1 && votes === 0) {
-      // occurs on decrement after an increment
+      // occurs on increment after a decrement
       patchVotes = 1;
     }
 
