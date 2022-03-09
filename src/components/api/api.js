@@ -25,3 +25,13 @@ export function getTopics() {
       return data;
     });
 }
+
+export function patchArticleVote(id, votes) {
+  return axios
+    .patch(`https://toms-nc-news-api.herokuapp.com/api/articles/${id}`, {
+      inc_votes: votes,
+    })
+    .then(({ data }) => {
+      return data;
+    });
+}
