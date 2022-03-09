@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+p.articles {
+  margin-top: 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -58,25 +62,107 @@
   }
 }
 
-.navbar {
-  width: 100%;
-  position: fixed;
-  align-items: center;
-  border: solid 1px #333;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #333;
-  display: flex;
-  padding-inline-start: 10px;
+h1.cooking {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(https://images.unsplash.com/photo-1504472685735-9bd4075b3779?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+}
+article.cooking {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://images.unsplash.com/photo-1504472685735-9bd4075b3779?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+}
+div.cooking {
+  background-color: white;
+}
+p.cooking {
+  font-size: larger;
+  /* color: white; */
+}
+h3.undefined {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-transform: uppercase;
+}
+div.undefined {
+  background-color: white;
+}
+p.undefined {
+  font-size: larger;
+  /* color: white; */
 }
 
-li {
-  align-items: center;
-  /* display: block; */
-  /* margin: 3px; */
-  /* padding: 5px; */
+h1.coding {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(https://images.unsplash.com/photo-1503252947848-7338d3f92f31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80);
 }
+
+article.coding {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://images.unsplash.com/photo-1503252947848-7338d3f92f31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80);
+}
+div.coding {
+  background-color: white;
+}
+p.coding {
+  font-size: larger;
+  color: white;
+}
+
+h1.football {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-transform: uppercase;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://images.unsplash.com/photo-1587329310686-91414b8e3cb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80);
+}
+article.football {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://images.unsplash.com/photo-1587329310686-91414b8e3cb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80);
+}
+div.football {
+  background-color: white;
+}
+p.football {
+  font-size: larger;
+  color: black;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #333;
+}
+
 .li-myacc {
   display: flex;
   flex-direction: row-reverse;
@@ -91,12 +177,13 @@ li {
   background-color: #333;
   float: left;
 }
+
 .link:hover {
+  text-transform: uppercase;
+  border-radius: 5px;
   align-items: center;
   background-color: gray;
   border: 3px solid gray;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 .article__card {
   margin-top: 5%;
@@ -106,7 +193,7 @@ li {
   grid-template-rows: auto;
   grid-template-areas:
     "header header header header"
-    "main main sidebar sidebar"
+    "sidebar sidebar main main"
     "footer footer footer2 footer2 "
     "date date date date";
 }
@@ -222,6 +309,7 @@ article-votes-page {
 }
 
 h1 {
-  padding-top: 15%;
-  margin-top: 0;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  margin: 0;
 }

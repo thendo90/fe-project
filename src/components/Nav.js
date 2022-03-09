@@ -9,13 +9,13 @@ export default function Nav() {
           Home
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link className="link" to="/articles">
           Articles
         </Link>
-      </li>
+      </li> */}
       <li>
-        <Link className="link" to="/topics">
+        <Link className="link link-topics" to="/topics">
           Topics
         </Link>
       </li>

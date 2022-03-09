@@ -6,19 +6,23 @@ import Home from "./components/Home";
 import ArticlePage from "./components/Articles/ArticlePage";
 import { UserContext } from "./contexts/UserContext";
 import { Routes, Route } from "react-router-dom";
+import TopicPage from "./components/Topics/TopicPage";
+import TopicList from "./components/Topics/TopicList";
 import "./App.css";
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState("test");
+  const [loggedInUser, setLoggedInUser] = useState("TEST USER");
 
   return (
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
       <div className="App">
         <Nav />
-        <Header />
+        {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/articles/:article_id" element={<ArticlePage />}></Route>
+          <Route path="/topics/:topic" element={<TopicPage />}></Route>
+          <Route path="/topics" element={<TopicList />}></Route>
         </Routes>
         <BottomBar />
       </div>
