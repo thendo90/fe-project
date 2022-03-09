@@ -68,6 +68,7 @@ h3.undefined {
   -webkit-text-stroke-color: black;
   text-transform: uppercase;
 }
+
 div.undefined {
   background-color: white;
 }
@@ -205,6 +206,7 @@ p.football {
 }
 
 .article__page {
+  height: 100%;
   margin: 10%;
   border-radius: 10px;
   text-align: start;
@@ -216,9 +218,40 @@ p.football {
   align-items: baseline;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 5%;
   margin-bottom: 15%;
 }
-
+.comment__list {
+  height: 100%;
+  margin: 10%;
+  border-radius: 10px;
+  text-align: start;
+  color: black;
+  padding: 5px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  margin-bottom: 15%;
+}
+.comment__card {
+  padding: 10px;
+  margin: 5%;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+.comment-edit,
+.comment-votes {
+  float: right;
+}
+.link_comments {
+  border-radius: 8px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 .article-header-page {
 }
 .article-topic-page {

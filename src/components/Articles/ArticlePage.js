@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getArticleById, patchArticleVote } from "../api/api";
 import Loading from "../Loading";
 
@@ -75,7 +75,9 @@ export default function ArticlePage() {
       <dt className="article-comments-page">
         {article.comment_count} comments
       </dt>
-      <button>view comments</button>
+      <Link to={`/articles/${article_id}/comments`} className="link">
+        view comments
+      </Link>
     </dl>
   );
 }

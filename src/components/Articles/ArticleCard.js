@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Date from "../Date";
 
 export default function ArticleCard({ article }) {
   const { title, topic, author, created_at, votes, comment_count, article_id } =
     article;
-
-  const date = new Date(Date.parse(created_at));
 
   return (
     <div className={`article__card ${topic}`}>
@@ -23,7 +22,7 @@ export default function ArticleCard({ article }) {
         {topic} */}
       </p>
       <p className="article-date">
-        {/* written: {`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`} */}
+        <Date date={article.created_at} />
       </p>
       <p className="article-comments">
         {/* Comments: <br />

@@ -35,3 +35,13 @@ export function patchArticleVote(id, votes) {
       return data;
     });
 }
+
+export function getCommentsById(id) {
+  return axios
+    .get(
+      `https://toms-nc-news-api.herokuapp.com/api/articles/${id}/comments?limit=50`
+    )
+    .then(({ data }) => {
+      return data;
+    });
+}
