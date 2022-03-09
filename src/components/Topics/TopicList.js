@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getTopics } from "../api/api";
+import Loading from "../Loading";
 import TopicCard from "./TopicCard";
 
 export default function TopicList() {
@@ -13,7 +14,7 @@ export default function TopicList() {
     });
   }, []);
 
-  if (loading) return <h1 className="loading">loading content</h1>;
+  if (loading) return <Loading />;
   return (
     <div className="topic__list">
       <h3>Click to see all articles of a given topic</h3>

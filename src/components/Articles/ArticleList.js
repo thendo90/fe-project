@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getArticles } from "../api/api";
+import Loading from "../Loading";
 import ArticleCard from "./ArticleCard";
 
 export default function ArticleList({ topic }) {
@@ -36,7 +37,7 @@ export default function ArticleList({ topic }) {
     });
   };
 
-  if (loading) return <h1 className="loading">loading content</h1>;
+  if (loading) return <Loading />;
   return (
     <article className={`ArticleList ${topic}`}>
       <p className={`articles ${topic}`}>
