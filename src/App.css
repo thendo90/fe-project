@@ -2,44 +2,10 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 p.articles {
   margin-top: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .article__card {
   border: solid 3px black;
   border-radius: 10px;
@@ -60,6 +26,15 @@ p.articles {
   to {
     opacity: 0%;
   }
+}
+
+.topic__list {
+  position: absolute;
+  top: 50%;
+  margin-left: 10%;
+  margin-right: 10%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 h1.cooking {
@@ -110,7 +85,7 @@ h1.coding {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-image: url(https://images.unsplash.com/photo-1503252947848-7338d3f92f31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80);
+  background-image: url(https://images.unsplash.com/photo-1550063873-ab792950096b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
 }
 
 article.coding {
@@ -118,7 +93,7 @@ article.coding {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url(https://images.unsplash.com/photo-1503252947848-7338d3f92f31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80);
+  background-image: url(https://images.unsplash.com/photo-1550063873-ab792950096b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
 }
 div.coding {
   background-color: white;
@@ -232,24 +207,38 @@ p.football {
 .article__page {
   margin: 10%;
   border-radius: 10px;
-  text-align: none;
-  text-decoration: none;
-  color: white;
+  text-align: start;
+  color: black;
   padding: 5px;
-  border: 3px solid #333;
-  background-color: #333;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 15%;
 }
 
-article-header-page {
-  padding-inline-start: 10px;
+.article-header-page {
 }
-article-author-page {
+.article-topic-page {
 }
-article-body-page {
+.article-author-page {
 }
-article-comments-page {
+.article-votes-page {
+  text-align: center;
+  align-self: center;
 }
-article-votes-page {
+.article-body-page {
+}
+.article-comments-page {
+}
+.article-button-page {
+  align-self: right;
+}
+form {
+  margin: 20px;
+  align-self: center;
 }
 
 .next {

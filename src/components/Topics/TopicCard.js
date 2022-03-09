@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function TopicCard({ topic }) {
   return (
-    <div className="TopicCard">
+    <div className="topic__card">
       <h2>
         <Link to={`/topics/${topic.slug}`} className="topic-link">
           {topic.slug}
