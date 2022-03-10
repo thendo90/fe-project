@@ -39,7 +39,7 @@ export function patchArticleVote(id, votes) {
 export function getCommentsById(id) {
   return axios
     .get(
-      `https://toms-nc-news-api.herokuapp.com/api/articles/${id}/comments?limit=50`
+      `https://toms-nc-news-api.herokuapp.com/api/articles/${id}/comments?limit=100`
     )
     .then(({ data }) => {
       return data;
@@ -47,12 +47,26 @@ export function getCommentsById(id) {
 }
 
 export function patchCommentVote(id, votes) {
-  console.log(id, votes);
   return axios
     .patch(`https://toms-nc-news-api.herokuapp.com/api/comments/${id}`, {
       inc_votes: votes,
     })
     .then(({ data }) => {
+      return data;
+    });
+}
+
+export function makeComment(id, username, body) {
+  return axios
+    .post(
+      `https://toms-nc-news-api.herokuapp.com/api/articles/${id}/comments`,
+      {
+        username,
+        body,
+      }
+    )
+    .then(({ data }) => {
+      console.log(data);
       return data;
     });
 }

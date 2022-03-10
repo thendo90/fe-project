@@ -6,6 +6,10 @@ p.articles {
   margin-top: 0;
 }
 
+.voter {
+  float: right;
+}
+
 .article__card {
   border: solid 3px black;
   border-radius: 10px;

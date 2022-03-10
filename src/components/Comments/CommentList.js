@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { getCommentsById } from "../api/api";
 import Loading from "../Loading";
 import CommentCard from "./CommentCard";
+import CommentForm from "./CommentForm";
 
 export default function CommentList() {
   const { article_id } = useParams();
@@ -21,6 +22,7 @@ export default function CommentList() {
     <>
       <article className="comment__list">
         <p className="undefined">Displaying {commentList.length} comments</p>
+        <CommentForm id={article_id} setCommentList={setCommentList} />
         <Link to={`/articles/${article_id}`} className="link link_comments">
           Return to article
         </Link>

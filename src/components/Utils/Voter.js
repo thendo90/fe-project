@@ -25,9 +25,9 @@ export default function Voter({ id, type, apiVotes }) {
       >
         +
       </button>
-      <br></br>
+
       {apiVotes + voterVotes}
-      <br></br>
+
       <button
         disabled={voterVotes === -1}
         className={type === "article" ? "article-button" : "comment-button"}

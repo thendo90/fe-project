@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getArticleById, patchArticleVote } from "../api/api";
+import { getArticleById } from "../api/api";
 import Loading from "../Loading";
 import Voter from "../Utils/Voter";
 
@@ -26,11 +26,7 @@ export default function ArticlePage() {
       <Voter type="article" id={article_id} apiVotes={votes} />
       {/* <dt className="article-topic-page">{article.topic}</dt> */}
       <dt className="article-body-page">{article.body}</dt>
-      <form>
-        <legend>comment</legend>
-        <input type="text"></input>
-        <button>submit</button>
-      </form>
+
       <dt className="article-comments-page">
         {article.comment_count} comments
       </dt>
