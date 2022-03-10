@@ -56,7 +56,7 @@ export function patchCommentVote(id, votes) {
     });
 }
 
-export function makeComment(id, username, body) {
+export function makeComment(id, { username, body }) {
   return axios
     .post(
       `https://toms-nc-news-api.herokuapp.com/api/articles/${id}/comments`,

@@ -12,7 +12,7 @@ import "./App.css";
 import CommentList from "./components/Comments/CommentList";
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState("TEST USER");
+  const [loggedInUser, setLoggedInUser] = useState("grumpy19");
 
   return (
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>

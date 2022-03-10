@@ -21,11 +21,11 @@ export default function CommentList() {
   return (
     <>
       <article className="comment__list">
-        <p className="undefined">Displaying {commentList.length} comments</p>
-        <CommentForm id={article_id} setCommentList={setCommentList} />
         <Link to={`/articles/${article_id}`} className="link link_comments">
           Return to article
         </Link>
+        <p className="undefined">Displaying {commentList.length} comments</p>
+        <CommentForm id={article_id} setCommentList={setCommentList} />
 
         {commentList.map((comment) => {
           return <CommentCard comment={comment} />;
