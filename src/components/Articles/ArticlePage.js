@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getArticleById, patchArticleVote } from "../api/api";
+import { UserContext } from "../../contexts/UserContext";
+import { getArticleById } from "../api/api";
 import Loading from "../Loading";
+import Voter from "../Utils/Voter";
 
 export default function ArticlePage() {
+  const { loggedInUser } = useContext(UserContext);
+
   const { article_id } = useParams();
   const [article, setArticle] = useState();
   const [loading, setLoading] = useState(true);
@@ -12,48 +16,30 @@ export default function ArticlePage() {
   useEffect(() => {
     getArticleById(article_id).then(({ article }) => {
       setArticle(article);
+      setVotes(article.votes);
       setLoading(false);
     });
   }, []);
-
-  const handleVote = (vote) => {
-    setVotes((current) => {
-      return current + vote;
-    });
-    patchArticleVote(article_id, vote);
-  };
 
   if (loading) return <Loading />;
   return (
     <dl className="article__page">
       <h1 className="article-header-page">{article.title}</h1>
-      <h4 className="article-author-page">by {article.author}</h4>
-      <button
-        disabled={votes === 1}
-        className="article-button-page"
-        onClick={() => {
-          handleVote(1);
-        }}
-      >
-        +
-      </button>
-      <dt className="article-votes-page">{article.votes + votes}</dt>
-      <button
-        disabled={votes === -1}
-        className="article-button-page"
-        onClick={() => {
-          handleVote(-1);
-        }}
-      >
-        -
-      </button>
+      <div hidden={loggedInUser !== article.author}>
+        <button>edit</button>
+        <button>delete</button>
+        <h4 className="article-author-page">your article</h4>
+      </div>
+      <div hidden={loggedInUser === article.author}>
+        <h4 className="article-author-page">by {article.author}</h4>
+        <Voter type="article" id={article_id} apiVotes={votes} />
+      </div>
+      <div hidden={loggedInUser !== article.author}>
+        <dt>{article.votes} upvotes</dt>
+      </div>
       {/* <dt className="article-topic-page">{article.topic}</dt> */}
       <dt className="article-body-page">{article.body}</dt>
-      <form>
-        <legend>comment</legend>
-        <input type="text"></input>
-        <button>submit</button>
-      </form>
+
       <dt className="article-comments-page">
         {article.comment_count} comments
       </dt>

@@ -9,9 +9,10 @@ import { Routes, Route } from "react-router-dom";
 import TopicPage from "./components/Topics/TopicPage";
 import TopicList from "./components/Topics/TopicList";
 import "./App.css";
+import CommentList from "./components/Comments/CommentList";
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState("TEST USER");
+  const [loggedInUser, setLoggedInUser] = useState("grumpy19");
 
   return (
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
@@ -19,10 +20,14 @@ function App() {
         <Nav />
         {/* <Header /> */}
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/articles/:article_id" element={<ArticlePage />}></Route>
-          <Route path="/topics/:topic" element={<TopicPage />}></Route>
-          <Route path="/topics" element={<TopicList />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/articles/:article_id" element={<ArticlePage />} />
+          <Route
+            path="/articles/:article_id/comments"
+            element={<CommentList />}
+          />
+          <Route path="/topics/:topic" element={<TopicPage />} />
+          <Route path="/topics" element={<TopicList />} />
         </Routes>
         <BottomBar />
       </div>
