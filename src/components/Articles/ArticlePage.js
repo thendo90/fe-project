@@ -75,7 +75,10 @@ export default function ArticlePage() {
       <dt className="article-comments-page">
         {article.comment_count} comments
       </dt>
-      <Link to={`/articles/${article_id}/comments`} className="link">
+      <Link
+        to={`/articles/${article_id}/comments`}
+        className="link article-link"
+      >
         view comments
       </Link>
     </dl>
