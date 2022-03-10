@@ -1,21 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { patchCommentVote } from "../api/api";
 import Date from "../Date";
 
 export default function CommentCard({ comment }) {
+  const { comment_id, author, votes, body, created_at } = comment;
+  const [commentVotes, setCommentVotes] = useState(0);
+
+  const handleVote = (vote) => {
+    setCommentVotes((current) => {
+      return current + vote;
+    });
+    patchCommentVote(comment_id, vote);
+  };
+
   return (
     <div className="comment__card">
       <dt className="comment-votes">
-        <button className="comment-button">+</button>
+        <button
+          disabled={commentVotes === 1}
+          className="comment-button"
+          onClick={() => {
+            handleVote(1);
+          }}
+        >
+          +
+        </button>
         <br></br>
-        {comment.votes}
+        {commentVotes + votes}
         <br></br>
-        <button className="comment-button">-</button>
+        <button
+          disabled={commentVotes === -1}
+          className="comment-button"
+          onClick={() => {
+            handleVote(-1);
+          }}
+        >
+          -
+        </button>
       </dt>
-      <h2>{comment.author}</h2>
-      <dt>{comment.body}</dt>
+      <h2>{author}</h2>
+      <dt>{body}</dt>
       <br></br>
       <dt>
-        <Date date={comment.created_at} />
+        <Date date={created_at} />
       </dt>
       <br></br>
       <button className="comment-delete">edit</button>

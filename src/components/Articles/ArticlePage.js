@@ -8,39 +8,19 @@ export default function ArticlePage() {
   const [article, setArticle] = useState();
   const [loading, setLoading] = useState(true);
   const [votes, setVotes] = useState(0);
-  const [currVote, setCurrVote] = useState(0);
 
   useEffect(() => {
     getArticleById(article_id).then(({ article }) => {
       setArticle(article);
-
       setLoading(false);
     });
   }, []);
 
-  useEffect(() => {
-    // following logic needed to "unpatch" the api when unvoting
-    let patchVotes = votes;
-    if (currVote === -1 && votes === 0) {
-      // occurs on decrement after an increment
-      patchVotes = -1;
-    }
-    if (currVote === 1 && votes === 0) {
-      // occurs on increment after a decrement
-      patchVotes = 1;
-    }
-
-    patchArticleVote(article_id, patchVotes);
-  }, [votes]);
-
   const handleVote = (vote) => {
-    setCurrVote(vote);
     setVotes((current) => {
-      if (current === 1 && vote === 1) return current;
-      if (current === -1 && vote === -1) return current;
-
       return current + vote;
     });
+    patchArticleVote(article_id, vote);
   };
 
   if (loading) return <Loading />;
@@ -49,6 +29,7 @@ export default function ArticlePage() {
       <h1 className="article-header-page">{article.title}</h1>
       <h4 className="article-author-page">by {article.author}</h4>
       <button
+        disabled={votes === 1}
         className="article-button-page"
         onClick={() => {
           handleVote(1);
@@ -58,6 +39,7 @@ export default function ArticlePage() {
       </button>
       <dt className="article-votes-page">{article.votes + votes}</dt>
       <button
+        disabled={votes === -1}
         className="article-button-page"
         onClick={() => {
           handleVote(-1);

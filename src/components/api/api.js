@@ -45,3 +45,14 @@ export function getCommentsById(id) {
       return data;
     });
 }
+
+export function patchCommentVote(id, votes) {
+  console.log(id, votes);
+  return axios
+    .patch(`https://toms-nc-news-api.herokuapp.com/api/comments/${id}`, {
+      inc_votes: votes,
+    })
+    .then(({ data }) => {
+      return data;
+    });
+}
