@@ -66,7 +66,13 @@ export function makeComment(id, { username, body }) {
       }
     )
     .then(({ data }) => {
-      console.log(data);
       return data;
     });
+}
+
+export function deleteComment(id) {
+  console.log(id);
+  return axios.delete(
+    `https://toms-nc-news-api.herokuapp.com/api/comments/${id}`
+  );
 }

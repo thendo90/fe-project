@@ -30,8 +30,13 @@ export default function ArticlePage() {
         <button>delete</button>
         <h4 className="article-author-page">your article</h4>
       </div>
+      <h4
+        hidden={loggedInUser === article.author}
+        className="article-author-page"
+      >
+        by {article.author}
+      </h4>
       <div hidden={loggedInUser === article.author}>
-        <h4 className="article-author-page">by {article.author}</h4>
         <Voter type="article" id={article_id} apiVotes={votes} />
       </div>
       <div hidden={loggedInUser !== article.author}>
