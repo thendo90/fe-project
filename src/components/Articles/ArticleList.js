@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getArticles } from "../api/api";
+import Loading from "../Loading";
 import ArticleCard from "./ArticleCard";
 
 export default function ArticleList({ topic }) {
-  const [loading, setLoading] = useState(true);
   const [articleList, setArticleList] = useState();
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState();
 
@@ -22,21 +23,14 @@ export default function ArticleList({ topic }) {
     });
   }, [page]);
 
-  const handleNext = () => {
+  const handlePageTurn = (turn) => {
     setLoading(true);
     setPage((currentPage) => {
-      return currentPage + 1;
+      return currentPage + turn;
     });
   };
 
-  const handlePrev = () => {
-    setLoading(true);
-    setPage((currentPage) => {
-      return currentPage - 1;
-    });
-  };
-
-  if (loading) return <h1 className="loading">loading content</h1>;
+  if (loading) return <Loading />;
   return (
     <article className={`ArticleList ${topic}`}>
       <p className={`articles ${topic}`}>
@@ -53,7 +47,7 @@ export default function ArticleList({ topic }) {
         hidden={page === 1}
         className="prev"
         onClick={() => {
-          handlePrev();
+          handlePageTurn(-1);
         }}
       >
         previous page
@@ -62,7 +56,7 @@ export default function ArticleList({ topic }) {
         hidden={page === Math.ceil(total / 10)}
         className="next"
         onClick={() => {
-          handleNext();
+          handlePageTurn(1);
         }}
       >
         next page
