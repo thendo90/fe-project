@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getArticleById, patchArticleVote } from "../api/api";
 import Loading from "../Loading";
+import Voter from "../Utils/Voter";
 
 export default function ArticlePage() {
   const { article_id } = useParams();
@@ -12,41 +13,17 @@ export default function ArticlePage() {
   useEffect(() => {
     getArticleById(article_id).then(({ article }) => {
       setArticle(article);
+      setVotes(article.votes);
       setLoading(false);
     });
   }, []);
-
-  const handleVote = (vote) => {
-    setVotes((current) => {
-      return current + vote;
-    });
-    patchArticleVote(article_id, vote);
-  };
 
   if (loading) return <Loading />;
   return (
     <dl className="article__page">
       <h1 className="article-header-page">{article.title}</h1>
       <h4 className="article-author-page">by {article.author}</h4>
-      <button
-        disabled={votes === 1}
-        className="article-button-page"
-        onClick={() => {
-          handleVote(1);
-        }}
-      >
-        +
-      </button>
-      <dt className="article-votes-page">{article.votes + votes}</dt>
-      <button
-        disabled={votes === -1}
-        className="article-button-page"
-        onClick={() => {
-          handleVote(-1);
-        }}
-      >
-        -
-      </button>
+      <Voter type="article" id={article_id} apiVotes={votes} />
       {/* <dt className="article-topic-page">{article.topic}</dt> */}
       <dt className="article-body-page">{article.body}</dt>
       <form>
