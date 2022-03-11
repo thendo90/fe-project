@@ -2,26 +2,23 @@ import React, { useEffect, useState } from "react";
 import { getArticles } from "../api/api";
 import Loading from "../Loading";
 import ArticleCard from "./ArticleCard";
+import Sorter from "../Utils/Sorter";
 
 export default function ArticleList({ topic }) {
   const [articleList, setArticleList] = useState();
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState();
+  const [query, setQuery] = useState({ p: page, topic });
 
   useEffect(() => {
-    let query = { p: page };
-
-    if (topic) {
-      query.topic = topic;
-    }
-
+    console.log(query);
     getArticles(query).then(({ articles, total_count }) => {
       setArticleList(articles);
       setLoading(false);
       setTotal(total_count);
     });
-  }, [page]);
+  }, [page, query]);
 
   const handlePageTurn = (turn) => {
     setLoading(true);
@@ -33,6 +30,7 @@ export default function ArticleList({ topic }) {
   if (loading) return <Loading />;
   return (
     <article className={`ArticleList ${topic}`}>
+      <Sorter setQuery={setQuery} topic={topic} />
       <p className={`articles ${topic}`}>
         Displaying {articleList.length} articles
       </p>

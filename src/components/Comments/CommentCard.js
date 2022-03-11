@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { deleteComment } from "../api/api";
-import Date from "../Date";
+import Date from "../Utils/Date";
 import Voter from "../Utils/Voter";
 
 export default function CommentCard({ comment, setCommentList }) {

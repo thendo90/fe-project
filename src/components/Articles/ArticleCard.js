@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Date from "../Date";
+import Date from "../Utils/Date";
 
 export default function ArticleCard({ article }) {
   const { title, topic, author, created_at, votes, comment_count, article_id } =
@@ -25,12 +25,12 @@ export default function ArticleCard({ article }) {
         <Date date={article.created_at} />
       </p>
       <p className="article-comments">
-        {/* Comments: <br />
-        {comment_count} */}
+        Comments: <br />
+        {comment_count}
       </p>
       <p className="article-votes">
-        {/* Votes: <br />
-        {votes} */}
+        Votes: <br />
+        {votes}
       </p>
     </div>
   );
