@@ -28,7 +28,9 @@ export default function CommentList() {
         <CommentForm id={article_id} setCommentList={setCommentList} />
 
         {commentList.map((comment) => {
-          return <CommentCard comment={comment} />;
+          return (
+            <CommentCard comment={comment} setCommentList={setCommentList} />
+          );
         })}
 
         <Link to={`/articles/${article_id}`} className="link link_comments">

@@ -247,7 +247,11 @@ p.football {
   border: 3px solid black;
   border-radius: 10px;
 }
-.comment-edit,
+.comment-deleted {
+  text-align: center;
+  width: 100%;
+}
+.comment-delete,
 .comment-votes {
   float: right;
 }
