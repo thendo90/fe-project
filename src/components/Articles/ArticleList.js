@@ -12,6 +12,7 @@ export default function ArticleList({ topic }) {
   const [query, setQuery] = useState({ p: page, topic });
 
   useEffect(() => {
+    console.log(query);
     getArticles(query).then(({ articles, total_count }) => {
       setArticleList(articles);
       setLoading(false);
