@@ -10,6 +10,7 @@ import TopicPage from "./components/Topics/TopicPage";
 import TopicList from "./components/Topics/TopicList";
 import "./App.css";
 import CommentList from "./components/Comments/CommentList";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("grumpy19");
@@ -28,6 +29,7 @@ function App() {
           />
           <Route path="/topics/:topic" element={<TopicPage />} />
           <Route path="/topics" element={<TopicList />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         <BottomBar />
       </div>

@@ -1,0 +1,14 @@
+.error__page {
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.error-link {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
