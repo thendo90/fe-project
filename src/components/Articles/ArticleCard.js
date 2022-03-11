@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Date from "../Date";
+import Date from "../Utils/Date";
 
 export default function ArticleCard({ article }) {
   const { title, topic, author, created_at, votes, comment_count, article_id } =
