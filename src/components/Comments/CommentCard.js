@@ -11,14 +11,16 @@ export default function CommentCard({ comment, setCommentList }) {
   const [deleteMessage, setDeleteMessage] = useState("comment deleted");
 
   const handleDelete = () => {
+    setDeleted(true);
     deleteComment(comment_id)
       .then(() => {
         setCommentList((prevList) => {
           return [...prevList];
         });
-        setDeleted(true);
       })
-      .catch((err) => {});
+      .catch((err) => {
+        setDeleted(false);
+      });
   };
 
   if (deleted) {
