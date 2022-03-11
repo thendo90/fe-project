@@ -25,12 +25,12 @@ export default function ArticleCard({ article }) {
         <Date date={article.created_at} />
       </p>
       <p className="article-comments">
-        {/* Comments: <br />
-        {comment_count} */}
+        Comments: <br />
+        {comment_count}
       </p>
       <p className="article-votes">
-        {/* Votes: <br />
-        {votes} */}
+        Votes: <br />
+        {votes}
       </p>
     </div>
   );
