@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import { getArticleById } from "../api/api";
+import ErrorPage from "../ErrorPage";
 import Loading from "../Loading";
 import Voter from "../Utils/Voter";
 
@@ -12,16 +13,24 @@ export default function ArticlePage() {
   const [article, setArticle] = useState();
   const [loading, setLoading] = useState(true);
   const [votes, setVotes] = useState(0);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getArticleById(article_id).then(({ article }) => {
-      setArticle(article);
-      setVotes(article.votes);
-      setLoading(false);
-    });
+    getArticleById(article_id)
+      .then(({ article }) => {
+        setArticle(article);
+        setVotes(article.votes);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError(true);
+        setLoading(false);
+      });
   }, []);
 
   if (loading) return <Loading />;
+  if (error)
+    return <ErrorPage message={`Article ${article_id} does not exist`} />;
   return (
     <dl className="article__page">
       <h1 className="article-header-page">{article.title}</h1>
