@@ -6,11 +6,11 @@ import Home from "./components/Home";
 import ArticlePage from "./components/Articles/ArticlePage";
 import { UserContext } from "./contexts/UserContext";
 import { Routes, Route } from "react-router-dom";
-import TopicPage from "./components/Topics/TopicPage";
 import TopicList from "./components/Topics/TopicList";
 import "./App.css";
 import CommentList from "./components/Comments/CommentList";
 import ErrorPage from "./components/ErrorPage";
+import ArticleList from "./components/Articles/ArticleList";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("grumpy19");
@@ -27,7 +27,7 @@ function App() {
             path="/articles/:article_id/comments"
             element={<CommentList />}
           />
-          <Route path="/topics/:topic" element={<TopicPage />} />
+          <Route path="/topics/:topic" element={<ArticleList />} />
           <Route path="/topics" element={<TopicList />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
