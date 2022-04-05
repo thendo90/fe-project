@@ -12,7 +12,7 @@ import ErrorPage from "./components/ErrorPage";
 import ArticleList from "./components/Articles/ArticleList";
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState("grumpy19");
+  const [loggedInUser, setLoggedInUser] = useState("");
 
   return (
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
