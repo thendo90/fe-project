@@ -1,0 +1,36 @@
+@media only screen and (max-width: 600px) {
+  .navbar {
+    position: fixed;
+    height: 5%;
+    top: 95%;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .navbar__link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #333;
+  }
+
+  .navbar__link:hover {
+    color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: cornflowerblue;
+    border: 5px solid cornflowerblue;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}

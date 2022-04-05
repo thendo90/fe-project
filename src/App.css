@@ -134,15 +134,6 @@ p.football {
   color: black;
 }
 
-.navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 10px;
-  padding-top: 0;
-  padding-bottom: 0;
-  background-color: #333;
-}
-
 .li-myacc {
   display: flex;
   flex-direction: row-reverse;
