@@ -1,8 +1,12 @@
 import axios from "axios";
 
+const api = axios.create({
+  baseURL: "https://toms-nc-news-api.herokuapp.com/api",
+});
+
 export function getArticles(query) {
-  return axios
-    .get("https://toms-nc-news-api.herokuapp.com/api/articles", {
+  return api
+    .get("/articles", {
       params: query,
     })
     .then(({ data }) => {
@@ -11,24 +15,20 @@ export function getArticles(query) {
 }
 
 export function getArticleById(id) {
-  return axios
-    .get(`https://toms-nc-news-api.herokuapp.com/api/articles/${id}`)
-    .then(({ data }) => {
-      return data;
-    });
+  return api.get(`/articles/${id}`).then(({ data }) => {
+    return data;
+  });
 }
 
 export function getTopics() {
-  return axios
-    .get("https://toms-nc-news-api.herokuapp.com/api/topics")
-    .then(({ data }) => {
-      return data;
-    });
+  return api.get("/topics").then(({ data }) => {
+    return data;
+  });
 }
 
 export function patchArticleVote(id, votes) {
-  return axios
-    .patch(`https://toms-nc-news-api.herokuapp.com/api/articles/${id}`, {
+  return api
+    .patch(`/articles/${id}`, {
       inc_votes: votes,
     })
     .then(({ data }) => {
@@ -37,18 +37,14 @@ export function patchArticleVote(id, votes) {
 }
 
 export function getCommentsById(id) {
-  return axios
-    .get(
-      `https://toms-nc-news-api.herokuapp.com/api/articles/${id}/comments?limit=100`
-    )
-    .then(({ data }) => {
-      return data;
-    });
+  return api.get(`/articles/${id}/comments?limit=100`).then(({ data }) => {
+    return data;
+  });
 }
 
 export function patchCommentVote(id, votes) {
-  return axios
-    .patch(`https://toms-nc-news-api.herokuapp.com/api/comments/${id}`, {
+  return api
+    .patch(`/comments/${id}`, {
       inc_votes: votes,
     })
     .then(({ data }) => {
@@ -57,22 +53,16 @@ export function patchCommentVote(id, votes) {
 }
 
 export function makeComment(id, { username, body }) {
-  return axios
-    .post(
-      `https://toms-nc-news-api.herokuapp.com/api/articles/${id}/comments`,
-      {
-        username,
-        body,
-      }
-    )
+  return api
+    .post(`/articles/${id}/comments`, {
+      username,
+      body,
+    })
     .then(({ data }) => {
       return data;
     });
 }
 
 export function deleteComment(id) {
-  console.log(id);
-  return axios.delete(
-    `https://toms-nc-news-api.herokuapp.com/api/comments/${id}`
-  );
+  return api.delete(`/comments/${id}`);
 }
