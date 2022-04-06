@@ -8,7 +8,7 @@ export default function ArticleCard({ article }) {
     article;
 
   return (
-    <main className={styles.ArticleCard__section}>
+    <main className={styles[`ArticleCard__${topic}`]}>
       <h4 className={styles.ArticleCard__header}>
         <Link
           to={`/articles/${article_id}`}

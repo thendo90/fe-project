@@ -1,19 +1,35 @@
-.ArticleCard__section {
+.ArticleCard__football,
+.ArticleCard__coding,
+.ArticleCard__cooking {
   display: flex;
   flex-direction: column;
   padding: 10px;
   margin: 8%;
   text-align: left;
-  border-bottom: 15px ridge grey;
+  border-bottom: 8px ridge snow;
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-origin: content-box;
+}
+
+.ArticleCard__football {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/33/33736.png);
+}
+.ArticleCard__coding {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/4396/4396623.png);
+}
+.ArticleCard__cooking {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/113/113339.png);
 }
 
 .ArticleCard__header {
   margin-top: 0;
   margin-bottom: 0;
-  text-align: justify;
   font-size: larger;
   padding-bottom: 10px;
   font-size: medium;
+  text-align: right;
+  padding-left: 100px;
 }
 
 .ArticleCard__link {
