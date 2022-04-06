@@ -18,6 +18,7 @@
 
 .ArticleCard__link {
   text-transform: uppercase;
+  font-size: large;
   text-decoration: none;
   color: firebrick;
 }
@@ -43,13 +44,16 @@
 
 .ArticleCard__author {
   padding-top: 10px;
+  padding-bottom: 5px;
   font-size: x-large;
   color: firebrick;
+  text-decoration-color: black;
   text-decoration-line: overline;
+  text-align: right;
 }
 
 .ArticleCard__topic {
-  font-size: larger;
+  font-size: x-large;
 }
 
 p {

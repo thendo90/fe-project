@@ -19,7 +19,6 @@ export default function ArticleCard({ article }) {
       </h4>
       <section className={styles.ArticleCard__wrapper}>
         <section className={styles.ArticleCard__users}>
-          <Date date={created_at} />
           <p>
             <b>{votes}</b> {votes >= 0 ? "upvotes" : "downvotes"}
           </p>
@@ -29,7 +28,8 @@ export default function ArticleCard({ article }) {
         </section>
 
         <section className={styles.ArticleCard__details}>
-          <em className={styles.ArticleCard__author}>{author}</em>
+          <b className={styles.ArticleCard__author}>{author}</b>
+          <Date date={created_at} />
           <b className={styles.ArticleCard__topic}>{topic}</b>
         </section>
       </section>
