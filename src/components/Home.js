@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <header className={styles.Home}>
       <h3 className={styles.Home__h3}>
-        Here's your news for today <em>{loggedInUser ? loggedInUser : null}</em>
+        Here's your news for today <em>{loggedInUser && loggedInUser}</em>
       </h3>
       <ArticleList />
     </header>

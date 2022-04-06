@@ -6,21 +6,6 @@
   float: right;
 }
 
-.loading {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: loading infinite 1s linear;
-}
-
-@keyframes loading {
-  to {
-    opacity: 0%;
-  }
-}
-
 .topic__list {
   position: absolute;
   top: 50%;
@@ -46,22 +31,6 @@
   align-items: center;
   background-color: gray;
   border: 3px solid gray;
-}
-
-.article-author {
-  grid-area: sidebar;
-}
-.article-topic {
-  grid-area: main;
-}
-.article-date {
-  grid-area: date;
-}
-.article-comments {
-  grid-area: footer;
-}
-.article-votes {
-  grid-area: footer2;
 }
 
 .article__page {
