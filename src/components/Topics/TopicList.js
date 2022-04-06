@@ -1,3 +1,4 @@
+import styles from "./TopicList.module.css";
 import React, { useEffect, useState } from "react";
 import { getTopics } from "../api/api";
 import Loading from "../Loading";
@@ -16,12 +17,11 @@ export default function TopicList() {
 
   if (loading) return <Loading />;
   return (
-    <div className="topic__list">
-      <h3>Click to see all articles of a given topic</h3>
-      <dt>Displaying {topicList.length} topics</dt>
+    <section className={styles.TopicList}>
+      <h2>Click a link to see all articles of a given topic</h2>
       {topicList.map((topic) => {
-        return <TopicCard topic={topic} />;
+        return <TopicCard topic={topic} key={topic.slug} />;
       })}
-    </div>
+    </section>
   );
 }

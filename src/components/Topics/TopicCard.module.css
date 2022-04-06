@@ -1,0 +1,33 @@
+.TopicCard__link {
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+  text-transform: uppercase;
+  color: firebrick;
+}
+
+.TopicCard__dt {
+  font-size: large;
+}
+
+.TopicCard__football,
+.TopicCard__coding,
+.TopicCard__cooking {
+  text-align: left;
+  padding-left: 100px;
+  background-repeat: no-repeat;
+  background-size: 75px;
+  margin-top: 50px;
+}
+
+.TopicCard__football {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/33/33736.png);
+}
+
+.TopicCard__coding {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/4396/4396623.png);
+}
+
+.TopicCard__cooking {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/113/113339.png);
+}
