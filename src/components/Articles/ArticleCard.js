@@ -22,7 +22,7 @@ export default function ArticleCard({ article }) {
         {topic} */}
       </p>
       <p className="article-date">
-        <Date date={article.created_at} />
+        <Date date={created_at} />
       </p>
       <p className="article-comments">
         Comments: <br />
