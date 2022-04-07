@@ -25,5 +25,15 @@
     background-color: white;
     margin-left: 0px;
     margin-right: 0px;
+    animation: click 300ms linear;
+  }
+
+  @keyframes click {
+    from {
+      opacity: 30%;
+    }
+    to {
+      opacity: 100%;
+    }
   }
 }

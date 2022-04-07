@@ -1,35 +1,24 @@
-.ArticleCard__football,
-.ArticleCard__coding,
-.ArticleCard__cooking {
+.ArticleCard {
   display: flex;
   flex-direction: column;
   padding: 10px;
   margin: 8%;
   text-align: left;
   border-bottom: 8px ridge snow;
-  background-repeat: no-repeat;
-  background-size: 80px;
-  background-origin: content-box;
 }
 
-.ArticleCard__football {
-  background-image: url(https://cdn-icons-png.flaticon.com/512/33/33736.png);
-}
-.ArticleCard__coding {
-  background-image: url(https://cdn-icons-png.flaticon.com/512/4396/4396623.png);
-}
-.ArticleCard__cooking {
-  background-image: url(https://cdn-icons-png.flaticon.com/512/113/113339.png);
+.ArticleCard__img {
+  height: 85px;
+  width: 85px;
+  margin-left: 30px;
+  align-self: center;
 }
 
 .ArticleCard__header {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: larger;
   padding-bottom: 10px;
-  font-size: medium;
   text-align: right;
-  padding-left: 100px;
 }
 
 .ArticleCard__link {
@@ -46,16 +35,11 @@
 }
 
 .ArticleCard__details {
+  padding-right: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: space-between;
-}
-
-.ArticleCard__users {
-  padding-left: 10px;
-  display: flex;
-  flex-direction: column-reverse;
+  justify-content: end;
 }
 
 .ArticleCard__author {
@@ -69,7 +53,7 @@
 }
 
 .ArticleCard__topic {
-  font-size: x-large;
+  font-size: large;
 }
 
 p {
