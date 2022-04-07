@@ -24,7 +24,7 @@ export default function DeleteEdit({ id, type, setDeleted, setCommentList }) {
   };
 
   const handleEdit = () => {};
-  console.log(type);
+
   return (
     <div className={styles[`DeleteEdit-${type}`]}>
       <button

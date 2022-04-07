@@ -1,57 +1,7 @@
 .App {
   text-align: center;
 }
-
-.link {
-  align-items: center;
-  text-decoration: none;
-  color: white;
-  padding: 5px;
-  border: 3px solid #333;
-  background-color: #333;
-  float: left;
-}
-
-.link:hover {
-  text-transform: uppercase;
-  border-radius: 5px;
-  align-items: center;
-  background-color: gray;
-  border: 3px solid gray;
-}
-
-.comment__list {
-  height: 100%;
-  margin: 10%;
-  border-radius: 10px;
-  text-align: start;
-  color: black;
-  padding: 5px;
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 5%;
-  margin-bottom: 15%;
-}
-.comment-delete,
-.comment-votes {
-  float: right;
-}
-.link_comments {
-  border-radius: 8px;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-/* form {
-  margin: 20px;
-  align-self: center;
-} */
-
-.bottombar {
+/* .bottombar {
   position: fixed;
   width: 100%;
   float: right;
@@ -63,4 +13,4 @@
   background-color: #333;
   display: flex;
   flex-direction: row-reverse;
-}
+} */
