@@ -1,4 +1,4 @@
-.error__page {
+.ErrorPage {
   margin: 0;
   position: absolute;
   top: 45%;
@@ -7,7 +7,7 @@
   transform: translateY(-50%);
 }
 
-.error-link {
+.ErrorPage__link {
   font-size: 2rem;
   text-transform: uppercase;
   text-decoration: none;
