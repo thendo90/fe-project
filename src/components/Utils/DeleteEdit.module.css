@@ -1,9 +1,17 @@
-.DeleteEdit {
+.DeleteEdit-commment,
+.DeleteEdit-article {
+  float: right;
   display: flex;
-  flex-direction: column;
   text-align: center;
   font-size: large;
   justify-content: space-around;
+}
+
+.DeleteEdit-commment {
+  flex-direction: row-reverse;
+}
+.DeleteEdit-article {
+  flex-direction: column;
 }
 
 .Delete,

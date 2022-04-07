@@ -36,16 +36,6 @@
   margin-top: 5%;
   margin-bottom: 15%;
 }
-.comment__card {
-  padding: 10px;
-  margin: 5%;
-  border: 3px solid black;
-  border-radius: 10px;
-}
-.comment-deleted {
-  text-align: center;
-  width: 100%;
-}
 .comment-delete,
 .comment-votes {
   float: right;

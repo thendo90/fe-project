@@ -11,11 +11,12 @@ export default function CommentList() {
   const [commentList, setCommentList] = useState();
 
   useEffect(() => {
+    setLoading(true);
     getCommentsById(article_id).then(({ comments }) => {
       setCommentList(comments);
       setLoading(false);
     });
-  }, []);
+  }, [article_id]);
 
   if (loading) return <Loading />;
   return (
