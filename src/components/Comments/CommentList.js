@@ -1,3 +1,4 @@
+import styles from "./CommentList.module.css";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getCommentsById } from "../api/api";
@@ -20,24 +21,25 @@ export default function CommentList() {
 
   if (loading) return <Loading />;
   return (
-    <>
-      <article className="comment__list">
-        <Link to={`/articles/${article_id}`} className="link link_comments">
-          Return to article
-        </Link>
-        <p className="undefined">Displaying {commentList.length} comments</p>
-        <CommentForm id={article_id} setCommentList={setCommentList} />
+    <article className={styles.CommentList}>
+      <Link to={`/articles/${article_id}`} className={styles.CommentList__link}>
+        Return to article
+      </Link>
+      <CommentForm id={article_id} setCommentList={setCommentList} />
 
-        {commentList.map((comment) => {
-          return (
-            <CommentCard comment={comment} setCommentList={setCommentList} />
-          );
-        })}
+      {commentList.map((comment) => {
+        return (
+          <CommentCard
+            comment={comment}
+            setCommentList={setCommentList}
+            key={comment.comment_id}
+          />
+        );
+      })}
 
-        <Link to={`/articles/${article_id}`} className="link link_comments">
-          Return to article
-        </Link>
-      </article>
-    </>
+      <Link to={`/articles/${article_id}`} className={styles.CommentList__link}>
+        Return to article
+      </Link>
+    </article>
   );
 }
