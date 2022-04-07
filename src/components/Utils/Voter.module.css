@@ -1,0 +1,47 @@
+.Voter0,
+.Voter1,
+.Voter-1 {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  text-align: center;
+  font-size: large;
+}
+.Voter1 {
+  font-weight: 900;
+  color: green;
+}
+.Voter-1 {
+  font-weight: 900;
+  color: firebrick;
+}
+
+.Voter__upvote,
+.Voter__downvote {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  border-color: white;
+  border-width: 0;
+  border-radius: 100%;
+}
+
+.Voter__upvote {
+  margin-bottom: 5px;
+  background-image: url(https://cdn-icons-png.flaticon.com/512/324/324999.png);
+  transform: scaleY(-1);
+}
+
+.Voter__downvote {
+  margin-top: 5px;
+  background-image: url(https://cdn-icons-png.flaticon.com/512/325/325088.png);
+}
+
+.Voter__upvote:disabled {
+  background-color: lime;
+}
+.Voter__downvote:disabled {
+  background-color: tomato;
+}

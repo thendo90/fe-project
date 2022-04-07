@@ -12,7 +12,7 @@ import ErrorPage from "./components/ErrorPage";
 import ArticleList from "./components/Articles/ArticleList";
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState("");
+  const [loggedInUser, setLoggedInUser] = useState("tickle122");
 
   return (
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>

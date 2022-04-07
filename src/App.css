@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.voter {
-  float: right;
-}
-
 .link {
   align-items: center;
   text-decoration: none;
@@ -24,22 +20,6 @@
   border: 3px solid gray;
 }
 
-.article__page {
-  height: 100%;
-  margin: 10%;
-  border-radius: 10px;
-  text-align: start;
-  color: black;
-  padding: 5px;
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 5%;
-  margin-bottom: 15%;
-}
 .comment__list {
   height: 100%;
   margin: 10%;
@@ -76,40 +56,9 @@
   margin-bottom: 5%;
 }
 
-.article-votes-page {
-  text-align: center;
-  align-self: center;
-}
-
-.article-button-page {
-  align-self: right;
-}
 /* form {
   margin: 20px;
   align-self: center;
-} */
-
-/* .link-myacc {
-  align-items: center;
-  text-decoration: none;
-  color: white;
-  padding: 5px;
-  border: 3px solid #333;
-  background-color: #333;
-
-  text-decoration: none;
-  color: white;
-  padding: 5px;
-  border: 3px solid #333;
-  background-color: #333;
-  right: 0%;
-  padding-inline-end: 10px;
-}
-.link-myacc:hover {
-  background-color: gray;
-  border: 3px solid gray;
-  padding-top: 10px;
-  padding-bottom: 10px;
 } */
 
 .bottombar {
