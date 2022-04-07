@@ -1,6 +1,8 @@
 .CommentCard {
   padding: 10px;
   border-bottom: 3px solid lightgray;
+  text-align: start;
+  min-width: 100%;
 }
 
 .CommentCard__author,

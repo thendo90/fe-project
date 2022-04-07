@@ -13,9 +13,13 @@ export default function CommentCard({ comment, setCommentList }) {
 
   if (deleted) {
     setTimeout(() => {
-      setDeleteMessage("");
+      setDeleteMessage(null);
     }, 2000);
-    return <h1 className={styles.CommentCard__deleted}>{deleteMessage}</h1>;
+    return (
+      deleteMessage && (
+        <h1 className={styles.CommentCard__deleted}>{deleteMessage}</h1>
+      )
+    );
   }
 
   return (
