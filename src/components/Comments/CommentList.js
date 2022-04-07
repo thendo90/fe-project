@@ -21,7 +21,7 @@ export default function CommentList() {
 
   if (loading) return <Loading />;
   return (
-    <article className={styles.CommentList}>
+    <main className={styles.CommentList}>
       <Link to={`/articles/${article_id}`} className={styles.CommentList__link}>
         Return to article
       </Link>
@@ -40,6 +40,6 @@ export default function CommentList() {
       <Link to={`/articles/${article_id}`} className={styles.CommentList__link}>
         Return to article
       </Link>
-    </article>
+    </main>
   );
 }
