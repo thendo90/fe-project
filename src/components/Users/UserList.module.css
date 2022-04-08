@@ -1,0 +1,6 @@
+.UserList {
+  display: flex;
+  flex-direction: column;
+  margin: 10%;
+  margin-top: 25%;
+}
