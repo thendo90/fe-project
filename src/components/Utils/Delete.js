@@ -17,7 +17,7 @@ export default function Delete({ id, type, setDeleted, setCommentList }) {
           setDeleted(false);
         });
     }
-    if (type === "account") {
+    if (type === "article") {
       deleteArticle(id)
         .then(() => {
           setDeleted(true);
