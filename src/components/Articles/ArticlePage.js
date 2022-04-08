@@ -36,7 +36,7 @@ export default function ArticlePage() {
   if (error)
     return <ErrorPage message={`Article ${article_id} does not exist`} />;
 
-  if (deleted) return <h2>article deleted</h2>;
+  if (deleted) return <ErrorPage message={`Article deleted successfully`} />;
 
   return (
     <article className={styles.ArticlePage}>
