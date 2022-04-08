@@ -13,16 +13,13 @@ input {
   padding: 10px;
   box-sizing: border-box;
   background-image: none;
-  transition-property: background-image, background-color, width, font-size;
+  transition-property: background-color, width, font-size;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
 }
 
 input:focus {
-  background-size: 48px;
-  background-repeat: no-repeat;
   background-color: floralwhite;
-  background-position: 0% 0%;
   width: 320px;
   font-size: larger;
 }
