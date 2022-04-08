@@ -55,7 +55,13 @@ export default function ArticlePage() {
         </div>
       ) : (
         <div className={styles.ArticlePage__details}>
-          <h3 className={styles.ArticlePage__author}>{article.author}</h3>
+          <Link
+            aria-label="view user"
+            to={`/users/${article.author}`}
+            className={styles.ArticlePage__author}
+          >
+            {article.author}
+          </Link>
         </div>
       )}
 

@@ -25,7 +25,15 @@ export default function ArticleCard({ article, UserPage }) {
         />
 
         <section className={styles.ArticleCard__details}>
-          {!UserPage && <b className={styles.ArticleCard__author}>{author}</b>}
+          {!UserPage && (
+            <Link
+              aria-label="view user"
+              to={`/users/${author}`}
+              className={styles.ArticleCard__author}
+            >
+              {article.author}
+            </Link>
+          )}
           <div className={styles.ArticleCard__subdetails}>
             <Date date={created_at} />
             <p>
