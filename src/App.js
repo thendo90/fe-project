@@ -9,7 +9,7 @@ import "./App.css";
 import CommentList from "./components/Comments/CommentList";
 import ErrorPage from "./components/ErrorPage";
 import ArticleList from "./components/Articles/ArticleList";
-import UserList from "./components/Users/UserList";
+// import UserList from "./components/Users/UserList";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("tickle122");
@@ -27,7 +27,7 @@ function App() {
           />
           <Route path="/topics/:topic" element={<ArticleList />} />
           <Route path="/topics" element={<TopicList />} />
-          <Route path="/users" element={<UserList />} />
+          {/* <Route path="/users" element={<UserList />} /> */}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Nav />
