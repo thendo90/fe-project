@@ -1,6 +1,6 @@
 import styles from "./Delete.module.css";
 import React from "react";
-import { deleteComment } from "../api/api";
+import { deleteArticle, deleteComment } from "../api/api";
 
 export default function Delete({ id, type, setDeleted, setCommentList }) {
   const handleDelete = () => {
@@ -18,7 +18,7 @@ export default function Delete({ id, type, setDeleted, setCommentList }) {
         });
     }
     if (type === "account") {
-      deleteComment(id)
+      deleteArticle(id)
         .then(() => {
           setDeleted(true);
         })
