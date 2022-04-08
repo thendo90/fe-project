@@ -20,7 +20,7 @@ export default function Delete({ id, type, setDeleted, setCommentList }) {
     if (type === "account") {
       deleteComment(id)
         .then(() => {
-          setArticleDeleted(true);
+          setDeleted(true);
         })
         .catch((err) => {
           setDeleted(false);
