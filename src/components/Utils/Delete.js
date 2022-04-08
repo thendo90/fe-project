@@ -1,8 +1,8 @@
-import styles from "./DeleteEdit.module.css";
+import styles from "./Delete.module.css";
 import React from "react";
 import { deleteComment } from "../api/api";
 
-export default function DeleteEdit({ id, type, setDeleted, setCommentList }) {
+export default function Delete({ id, type, setDeleted, setCommentList }) {
   const handleDelete = () => {
     setDeleted(true);
 
@@ -23,23 +23,13 @@ export default function DeleteEdit({ id, type, setDeleted, setCommentList }) {
     }
   };
 
-  const handleEdit = () => {};
-
   return (
-    <div className={styles[`DeleteEdit-${type}`]}>
+    <div className={styles[`Delete-${type}`]}>
       <button
         aria-label={`delete ${type}`}
         className={styles.Delete}
         onClick={() => {
           handleDelete();
-        }}
-      ></button>
-
-      <button
-        aria-label={`edit ${type}`}
-        className={styles.Edit}
-        onClick={() => {
-          handleEdit();
         }}
       ></button>
     </div>

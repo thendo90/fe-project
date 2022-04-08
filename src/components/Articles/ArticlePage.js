@@ -6,7 +6,7 @@ import { getArticleById } from "../api/api";
 import ErrorPage from "../ErrorPage";
 import Loading from "../Loading";
 import Voter from "../Utils/Voter";
-import DeleteEdit from "../Utils/DeleteEdit";
+import Delete from "../Utils/Delete";
 
 export default function ArticlePage() {
   const { loggedInUser } = useContext(UserContext);
@@ -42,7 +42,7 @@ export default function ArticlePage() {
         {loggedInUser !== article.author ? (
           <Voter type="article" id={article_id} apiVotes={votes} />
         ) : (
-          <DeleteEdit type="article" id={article_id} />
+          <Delete type="article" id={article_id} />
         )}
       </section>
       {loggedInUser === article.author ? (
