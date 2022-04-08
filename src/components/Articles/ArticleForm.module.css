@@ -1,0 +1,32 @@
+.ArticleForm {
+  margin: 10%;
+  margin-top: 30%;
+}
+
+.ArticleForm__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.ArticleForm__label {
+  text-align: left;
+  margin-top: 5%;
+}
+
+.ArticleForm__input {
+  padding: 5px;
+}
+.ArticleForm__body {
+  padding: 5px;
+  height: 300px;
+  vertical-align: top;
+}
+
+.ArticleForm__submit {
+  margin-top: 5%;
+  padding: 10px;
+  font-size: larger;
+  border-radius: 20px;
+  width: 150px;
+  align-self: center;
+}
