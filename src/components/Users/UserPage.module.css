@@ -1,0 +1,14 @@
+.UserPage {
+  margin-top: 5%;
+  margin-bottom: 15%;
+}
+
+.UserPage__h2 {
+  padding: 5%;
+  padding-left: 13%;
+  padding-right: 13%;
+}
+
+.UserPage__b {
+  color: firebrick;
+}

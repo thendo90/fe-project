@@ -66,3 +66,9 @@ export function makeComment(id, { username, body }) {
 export function deleteComment(id) {
   return api.delete(`/comments/${id}`);
 }
+
+export function getUsers() {
+  return api.get(`/users`).then(({ data }) => {
+    return data;
+  });
+}

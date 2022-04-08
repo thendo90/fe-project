@@ -24,13 +24,13 @@ The minimum version of Node.js which I can endorse for running this project is v
 
 Some features left to add are:
 
-- a users section with user cards - each linking to a user profile which shows all the articles written by that user
 - handling log-in / log-out (currently hardcoded to be logged in as tickle122)
 - an account page
 - the ability to post an article
 - the ability to patch an article
 - the ability to delete an article
 - the ability to patch a comment
+- make the design more responsive (currently only styled for mobile views)
 
 ## Built with
 
