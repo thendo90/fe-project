@@ -16,6 +16,7 @@ export default function ArticlePage() {
   const [loading, setLoading] = useState(true);
   const [votes, setVotes] = useState(0);
   const [error, setError] = useState(null);
+  const [deleted, setDeleted] = useState(false);
 
   useEffect(() => {
     getArticleById(article_id)
@@ -35,6 +36,8 @@ export default function ArticlePage() {
   if (error)
     return <ErrorPage message={`Article ${article_id} does not exist`} />;
 
+  if (deleted) return <h2>article deleted</h2>;
+
   return (
     <article className={styles.ArticlePage}>
       <section className={styles.ArticlePage__headerWrap}>
@@ -42,7 +45,7 @@ export default function ArticlePage() {
         {loggedInUser.username !== article.author ? (
           <Voter type="article" id={article_id} apiVotes={votes} />
         ) : (
-          <Delete type="article" id={article_id} />
+          <Delete type="article" id={article_id} deleted={setDeleted} />
         )}
       </section>
       {loggedInUser.username === article.author ? (

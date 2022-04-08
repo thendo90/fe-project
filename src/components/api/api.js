@@ -20,6 +20,10 @@ export function getArticleById(id) {
   });
 }
 
+export function deleteArticle(id) {
+  return api.delete(`articles/${id}`);
+}
+
 export function getTopics() {
   return api.get("/topics").then(({ data }) => {
     return data;

@@ -6,20 +6,25 @@ export default function Delete({ id, type, setDeleted, setCommentList }) {
   const handleDelete = () => {
     setDeleted(true);
 
-    switch (type) {
-      case "comment":
-        deleteComment(id)
-          .then(() => {
-            setCommentList((prevList) => {
-              return [...prevList];
-            });
-          })
-          .catch((err) => {
-            setDeleted(false);
+    if (type === "comment") {
+      deleteComment(id)
+        .then(() => {
+          setCommentList((prevList) => {
+            return [...prevList];
           });
-        break;
-      default:
-        break;
+        })
+        .catch((err) => {
+          setDeleted(false);
+        });
+    }
+    if (type === "account") {
+      deleteComment(id)
+        .then(() => {
+          setArticleDeleted(true);
+        })
+        .catch((err) => {
+          setDeleted(false);
+        });
     }
   };
 
