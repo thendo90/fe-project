@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Date from "../Utils/Date";
 
-export default function ArticleCard({ article }) {
+export default function ArticleCard({ article, UserPage }) {
   const { title, topic, author, created_at, votes, comment_count, article_id } =
     article;
 
@@ -25,7 +25,7 @@ export default function ArticleCard({ article }) {
         />
 
         <section className={styles.ArticleCard__details}>
-          <b className={styles.ArticleCard__author}>{author}</b>
+          {!UserPage && <b className={styles.ArticleCard__author}>{author}</b>}
           <div className={styles.ArticleCard__subdetails}>
             <Date date={created_at} />
             <p>

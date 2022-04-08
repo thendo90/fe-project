@@ -1,0 +1,23 @@
+.UserCard {
+  border-radius: 10px;
+  border: 2px solid firebrick;
+  background-color: snow;
+  margin: 5%;
+  padding: 10px;
+}
+
+.UserCard__h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.UserCard__img {
+  height: 75px;
+}
+
+.UserCard__link {
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+  color: firebrick;
+}
