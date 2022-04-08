@@ -11,9 +11,15 @@ import ErrorPage from "./components/ErrorPage";
 import ArticleList from "./components/Articles/ArticleList";
 import UserList from "./components/Users/UserList";
 import UserPage from "./components/Users/UserPage";
+import Account from "./components/Users/Account";
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState("tickle122");
+  const [loggedInUser, setLoggedInUser] = useState({
+    avatar_url:
+      "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953",
+    name: "Tom Tickle",
+    username: "tickle122",
+  });
 
   return (
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
@@ -30,6 +36,7 @@ function App() {
           <Route path="/topics" element={<TopicList />} />
           <Route path="/users" element={<UserList />} />
           <Route path="/users/:username" element={<UserPage />} />
+          <Route path="/myacc" element={<Account />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Nav />

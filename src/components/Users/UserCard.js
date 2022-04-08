@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function UserCard({ user }) {
   const { loggedInUser } = useContext(UserContext);
 
-  if (loggedInUser === user.username) return null;
+  if (loggedInUser.username === user.username) return null;
   return (
     <section className={styles.UserCard}>
       <h2 className={styles.UserCard__h2}>

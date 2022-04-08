@@ -26,11 +26,15 @@ export default function CommentCard({ comment, setCommentList }) {
     <div className={styles.CommentCard}>
       <h2
         className={
-          styles[`CommentCard__${loggedInUser !== author ? "author" : "you"}`]
+          styles[
+            `CommentCard__${
+              loggedInUser.username !== author ? "author" : "you"
+            }`
+          ]
         }
       >
-        {loggedInUser !== author ? author : "you"}
-        {loggedInUser !== author ? (
+        {loggedInUser.username !== author ? author : "you"}
+        {loggedInUser.username !== author ? (
           <Voter type="comment" id={comment_id} apiVotes={votes} />
         ) : (
           <Delete

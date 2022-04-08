@@ -5,7 +5,10 @@ import { makeComment } from "../api/api";
 
 export default function CommentForm({ id, setCommentList }) {
   const { loggedInUser } = useContext(UserContext);
-  const [comment, setComment] = useState({ username: loggedInUser, body: "" });
+  const [comment, setComment] = useState({
+    username: loggedInUser.username,
+    body: "",
+  });
   const [postSuccess, setPostSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [disableSubmit, setDisableSubmit] = useState(true);
