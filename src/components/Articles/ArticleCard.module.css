@@ -39,7 +39,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .ArticleCard__author {
