@@ -6,7 +6,7 @@ import { getArticleById } from "../api/api";
 import ErrorPage from "../ErrorPage";
 import Loading from "../Loading";
 import Voter from "../Utils/Voter";
-import DeleteEdit from "../Utils/DeleteEdit";
+import Delete from "../Utils/Delete";
 
 export default function ArticlePage() {
   const { loggedInUser } = useContext(UserContext);
@@ -39,13 +39,13 @@ export default function ArticlePage() {
     <article className={styles.ArticlePage}>
       <section className={styles.ArticlePage__headerWrap}>
         <h2 className={styles.ArticlePage__header}>{article.title}</h2>
-        {loggedInUser !== article.author ? (
+        {loggedInUser.username !== article.author ? (
           <Voter type="article" id={article_id} apiVotes={votes} />
         ) : (
-          <DeleteEdit type="article" id={article_id} />
+          <Delete type="article" id={article_id} />
         )}
       </section>
-      {loggedInUser === article.author ? (
+      {loggedInUser.username === article.author ? (
         <div className={styles.ArticlePage__details}>
           <h3 className={styles.ArticlePage__author}>your article</h3>
           <dt className={styles.ArticlePage__votes}>

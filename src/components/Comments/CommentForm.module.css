@@ -5,7 +5,7 @@
   padding: 10px;
 }
 
-input {
+.CommentForm__input {
   border-radius: 5px;
   width: 120px;
   background: white;
@@ -18,7 +18,7 @@ input {
   transition-timing-function: ease-in-out;
 }
 
-input:focus {
+.CommentForm__input:focus {
   background-color: floralwhite;
   width: 320px;
   font-size: larger;

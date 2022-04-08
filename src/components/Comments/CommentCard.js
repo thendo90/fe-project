@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import Date from "../Utils/Date";
 import Voter from "../Utils/Voter";
-import DeleteEdit from "../Utils/DeleteEdit";
+import Delete from "../Utils/Delete";
 
 export default function CommentCard({ comment, setCommentList }) {
   const { loggedInUser } = useContext(UserContext);
@@ -26,14 +26,18 @@ export default function CommentCard({ comment, setCommentList }) {
     <div className={styles.CommentCard}>
       <h2
         className={
-          styles[`CommentCard__${loggedInUser !== author ? "author" : "you"}`]
+          styles[
+            `CommentCard__${
+              loggedInUser.username !== author ? "author" : "you"
+            }`
+          ]
         }
       >
-        {loggedInUser !== author ? author : "you"}
-        {loggedInUser !== author ? (
+        {loggedInUser.username !== author ? author : "you"}
+        {loggedInUser.username !== author ? (
           <Voter type="comment" id={comment_id} apiVotes={votes} />
         ) : (
-          <DeleteEdit
+          <Delete
             type="comment"
             id={comment_id}
             setDeleted={setDeleted}

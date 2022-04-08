@@ -1,5 +1,5 @@
-.DeleteEdit-commment,
-.DeleteEdit-article {
+.Delete-commment,
+.Delete-article {
   float: right;
   display: flex;
   text-align: center;
@@ -7,15 +7,14 @@
   justify-content: space-around;
 }
 
-.DeleteEdit-commment {
+.Delete-commment {
   flex-direction: row-reverse;
 }
-.DeleteEdit-article {
+.Delete-article {
   flex-direction: column;
 }
 
-.Delete,
-.Edit {
+.Delete {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -28,8 +27,4 @@
 
 .Delete {
   background-image: url(https://cdn-icons-png.flaticon.com/512/1345/1345823.png);
-}
-
-.Edit {
-  background-image: url(https://cdn-icons-png.flaticon.com/512/1159/1159633.png);
 }
