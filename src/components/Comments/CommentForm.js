@@ -58,6 +58,7 @@ export default function CommentForm({ id, setCommentList }) {
         value={comment.body}
         onChange={handleChange}
         placeholder="post a comment..."
+        className={styles.CommentForm__input}
       ></input>
       <button disabled={disableSubmit} className={styles.CommentForm__submit}>
         submit

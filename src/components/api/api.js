@@ -72,3 +72,8 @@ export function getUsers() {
     return data;
   });
 }
+export function getUser(username) {
+  return api.get(`/users/${username}`).then(({ data }) => {
+    return data;
+  });
+}

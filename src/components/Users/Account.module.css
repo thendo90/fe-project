@@ -4,6 +4,11 @@
   border: 5px black solid;
   border-radius: 20px;
 }
+.Account__form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
 
 .Account__h2 {
   display: flex;
@@ -11,11 +16,13 @@
   align-items: center;
 }
 
-.Account__signOut {
+.Account__button {
+  align-self: center;
   border-radius: 20px;
   font-size: 25px;
   margin-top: 10px;
   padding: 5px;
+  width: 150px;
 }
 
 .Account__b {
@@ -44,4 +51,29 @@
   box-shadow: 2px 2px 2px black;
   font-size: 25px;
   margin-top: 10px;
+}
+
+.Account__input {
+  border-radius: 5px;
+  width: 60%;
+  background: white;
+  align-self: center;
+  padding: 10px;
+  background-image: none;
+  transition-property: background-color, width, font-size;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.Account__input:focus {
+  background-color: floralwhite;
+  width: 100%;
+  font-size: larger;
+}
+.Account__input:invalid {
+  color: red;
+}
+
+.Account__invalid {
+  color: red;
 }

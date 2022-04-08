@@ -1,12 +1,54 @@
 import styles from "./Account.module.css";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { Link } from "react-router-dom";
+import { getUser } from "../api/api";
 
 export default function Account() {
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+  const [username, setUsername] = useState("");
+  const [invalidUser, setInvalidUser] = useState(false);
 
-  if (!loggedInUser) return <main className={styles.Account}></main>;
+  const handleChange = (event) => {
+    setUsername(event.target.value);
+    setInvalidUser(false);
+  };
+
+  const logIn = (event) => {
+    event.preventDefault();
+    getUser(username)
+      .then(({ user }) => {
+        setLoggedInUser(user);
+      })
+      .catch((err) => {
+        setInvalidUser(true);
+      });
+  };
+
+  if (!loggedInUser)
+    return (
+      <main className={styles.Account}>
+        <form
+          className={styles.Account__form}
+          onSubmit={(event) => {
+            logIn(event);
+          }}
+        >
+          <input
+            type="text"
+            value={username}
+            onChange={handleChange}
+            placeholder="Enter your username"
+            className={styles.Account__input}
+          ></input>
+          <button className={styles.Account__button}>log in</button>
+        </form>
+        {invalidUser && (
+          <b className={styles.Account__invalid}>invalid username</b>
+        )}
+      </main>
+    );
+
   return (
     <main className={styles.Account}>
       <h2 className={styles.Account__h2}>
@@ -18,7 +60,7 @@ export default function Account() {
           className={styles.Account__img}
         />
         <button
-          className={styles.Account__signOut}
+          className={styles.Account__button}
           onClick={() => setLoggedInUser("")}
         >
           sign out
