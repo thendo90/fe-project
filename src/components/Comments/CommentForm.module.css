@@ -1,0 +1,33 @@
+.CommentForm {
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  padding: 10px;
+}
+
+input {
+  border-radius: 5px;
+  width: 120px;
+  background: white;
+  align-self: center;
+  padding: 10px;
+  box-sizing: border-box;
+  background-image: none;
+  transition-property: background-color, width, font-size;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+input:focus {
+  background-color: floralwhite;
+  width: 320px;
+  font-size: larger;
+}
+
+.CommentForm__submit {
+  padding: 5px;
+  font-size: large;
+  width: auto;
+  align-self: center;
+  margin-top: 10px;
+}

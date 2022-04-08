@@ -1,3 +1,4 @@
+import styles from "./ArticlePage.module.css";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
@@ -5,6 +6,7 @@ import { getArticleById } from "../api/api";
 import ErrorPage from "../ErrorPage";
 import Loading from "../Loading";
 import Voter from "../Utils/Voter";
+import DeleteEdit from "../Utils/DeleteEdit";
 
 export default function ArticlePage() {
   const { loggedInUser } = useContext(UserContext);
@@ -26,43 +28,48 @@ export default function ArticlePage() {
         setError(true);
         setLoading(false);
       });
-  }, []);
+  }, [article_id]);
 
   if (loading) return <Loading />;
+
   if (error)
     return <ErrorPage message={`Article ${article_id} does not exist`} />;
-  return (
-    <dl className="article__page">
-      <h1 className="article-header-page">{article.title}</h1>
-      <div hidden={loggedInUser !== article.author}>
-        <button>edit</button>
-        <button>delete</button>
-        <h4 className="article-author-page">your article</h4>
-      </div>
-      <h4
-        hidden={loggedInUser === article.author}
-        className="article-author-page"
-      >
-        by {article.author}
-      </h4>
-      <div hidden={loggedInUser === article.author}>
-        <Voter type="article" id={article_id} apiVotes={votes} />
-      </div>
-      <div hidden={loggedInUser !== article.author}>
-        <dt>{article.votes} upvotes</dt>
-      </div>
-      {/* <dt className="article-topic-page">{article.topic}</dt> */}
-      <dt className="article-body-page">{article.body}</dt>
 
-      <dt className="article-comments-page">
-        {article.comment_count} comments
-      </dt>
-      <Link
-        to={`/articles/${article_id}/comments`}
-        className="link article-link"
-      >
-        view comments
-      </Link>
-    </dl>
+  return (
+    <article className={styles.ArticlePage}>
+      <section className={styles.ArticlePage__headerWrap}>
+        <h2 className={styles.ArticlePage__header}>{article.title}</h2>
+        {loggedInUser !== article.author ? (
+          <Voter type="article" id={article_id} apiVotes={votes} />
+        ) : (
+          <DeleteEdit type="article" id={article_id} />
+        )}
+      </section>
+      {loggedInUser === article.author ? (
+        <div className={styles.ArticlePage__details}>
+          <h3 className={styles.ArticlePage__author}>your article</h3>
+          <dt className={styles.ArticlePage__votes}>
+            <b>{article.votes}</b>{" "}
+            {article.votes >= 0 ? "upvotes" : "downvotes"}
+          </dt>
+        </div>
+      ) : (
+        <div className={styles.ArticlePage__details}>
+          <h3 className={styles.ArticlePage__author}>{article.author}</h3>
+        </div>
+      )}
+
+      <main className={styles.ArticlePage__main}>
+        <p className={styles.ArticlePage__body}>{article.body}</p>
+
+        <Link
+          aria-label="view comments"
+          to={`/articles/${article_id}/comments`}
+          className={styles.ArticlePage__comments}
+        >
+          view comments (<b>{article.comment_count}</b>)
+        </Link>
+      </main>
+    </article>
   );
 }

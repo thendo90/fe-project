@@ -1,0 +1,43 @@
+.ArticleList {
+  display: flex;
+  flex-direction: column;
+}
+
+.ArticleList__h3 {
+  font-size: 3em;
+  padding-bottom: 10px;
+  margin: 15px;
+  border-bottom: groove grey 10px;
+}
+
+.ArticleList__topic {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-transform: uppercase;
+}
+
+.ArticleList__button_wrapper {
+  align-self: center;
+  width: 80%;
+  flex-direction: row;
+  margin-top: 0;
+  margin-bottom: 15%;
+  padding: 0;
+}
+
+.ArticleList__p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.next,
+.prev {
+  font-size: 20px;
+  border: solid 3px black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+}

@@ -1,3 +1,4 @@
+import styles from "./ArticleList.module.css";
 import React, { useEffect, useState } from "react";
 import { getArticles } from "../api/api";
 import Loading from "../Loading";
@@ -37,41 +38,59 @@ export default function ArticleList() {
   };
 
   if (loading) return <Loading />;
+
   if (error) return <ErrorPage message={`Topic ${topic} does not exist`} />;
+
   return (
-    <article className={`ArticleList ${topic}`}>
-      {topic ? <h1 className={topic}>{topic}</h1> : ""}
+    <section className={styles.ArticleList}>
+      {topic && (
+        <h3 className={styles.ArticleList__h3}>
+          current topic <em className={styles.ArticleList__topic}>{topic}</em>
+        </h3>
+      )}
+
       <Sorter setQuery={setQuery} topic={topic} />
-      <p className={`articles ${topic}`}>
+
+      <p className={styles.ArticleList__p}>
         Displaying {articleList.length} articles
       </p>
-      <p className={`articles ${topic}`}>
+
+      <p className={styles.ArticleList__p}>
         Page {page} of {Math.ceil(total / 10)}
       </p>
+
       {articleList.map((article) => {
-        return <ArticleCard article={article} />;
+        return (
+          <ArticleCard
+            article={article}
+            key={`article-${article.article_id}`}
+          />
+        );
       })}
 
-      <button
-        hidden={page === 1}
-        className="prev"
-        onClick={() => {
-          handlePageTurn(-1);
-        }}
+      <section
+        name="button wrapper"
+        className={styles.ArticleList__button_wrapper}
       >
-        previous page
-      </button>
-      <button
-        hidden={page === Math.ceil(total / 10)}
-        className="next"
-        onClick={() => {
-          handlePageTurn(1);
-        }}
-      >
-        next page
-      </button>
-
-      <br></br>
-    </article>
+        <button
+          hidden={page === 1}
+          className={styles.prev}
+          onClick={() => {
+            handlePageTurn(-1);
+          }}
+        >
+          <b>previous</b>
+        </button>
+        <button
+          hidden={page === Math.ceil(total / 10)}
+          className={styles.next}
+          onClick={() => {
+            handlePageTurn(1);
+          }}
+        >
+          <b>next</b>
+        </button>
+      </section>
+    </section>
   );
 }

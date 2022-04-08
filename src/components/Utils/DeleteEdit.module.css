@@ -1,0 +1,35 @@
+.DeleteEdit-commment,
+.DeleteEdit-article {
+  float: right;
+  display: flex;
+  text-align: center;
+  font-size: large;
+  justify-content: space-around;
+}
+
+.DeleteEdit-commment {
+  flex-direction: row-reverse;
+}
+.DeleteEdit-article {
+  flex-direction: column;
+}
+
+.Delete,
+.Edit {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+  border-color: white;
+  border-width: 0;
+  background-color: white;
+}
+
+.Delete {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/1345/1345823.png);
+}
+
+.Edit {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/1159/1159633.png);
+}

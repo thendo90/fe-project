@@ -1,3 +1,4 @@
+import styles from "./CommentForm.module.css";
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { makeComment } from "../api/api";
@@ -5,23 +6,26 @@ import { makeComment } from "../api/api";
 export default function CommentForm({ id, setCommentList }) {
   const { loggedInUser } = useContext(UserContext);
   const [comment, setComment] = useState({ username: loggedInUser, body: "" });
-  const [postSuccess, setPostSucces] = useState(true);
-  const [error, setError] = useState(true);
+  const [postSuccess, setPostSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const [disableSubmit, setDisableSubmit] = useState(true);
 
   const handleChange = (event) => {
+    setPostSuccess(false);
+    setError(false);
+
     event.target.value.length > 10
       ? setDisableSubmit(false)
       : setDisableSubmit(true);
     setComment((prevComment) => {
       return { ...prevComment, body: event.target.value };
     });
-    setPostSucces(true);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setDisableSubmit(true);
+
     makeComment(id, comment)
       .then((res) => {
         setCommentList((prevList) => {
@@ -30,32 +34,33 @@ export default function CommentForm({ id, setCommentList }) {
         setComment((prevComment) => {
           return { ...prevComment, body: "" };
         });
-        setError(true);
-        setPostSucces(false);
+        setPostSuccess(true);
       })
       .catch((err) => {
-        setError(false);
+        setError(true);
       });
   };
 
   return (
-    <>
-      <form
-        onSubmit={(event) => {
-          handleSubmit(event);
-        }}
-      >
-        <label htmlFor="comment">comment (minimum 10 characters)</label>
-        <input
-          id="comment"
-          type="text"
-          value={comment.body}
-          onChange={handleChange}
-        ></input>
-        <button disabled={disableSubmit}>submit</button>
-      </form>
-      <p hidden={postSuccess}>Comment posted!</p>
-      <p hidden={error}>Something went wrong...</p>
-    </>
+    <form
+      className={styles.CommentForm}
+      onSubmit={(event) => {
+        handleSubmit(event);
+      }}
+    >
+      <label htmlFor="comment" className={styles.CommentForm__label} />
+      <input
+        id="comment"
+        type="text"
+        value={comment.body}
+        onChange={handleChange}
+        placeholder="post a comment..."
+      ></input>
+      <button disabled={disableSubmit} className={styles.CommentForm__submit}>
+        submit
+      </button>
+      {postSuccess && <p>Comment posted!</p>}
+      {error && <p>Something went wrong...</p>}
+    </form>
   );
 }

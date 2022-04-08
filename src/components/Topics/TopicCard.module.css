@@ -1,0 +1,27 @@
+.TopicCard {
+  text-align: left;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.TopicCard__img {
+  height: 100px;
+  align-self: flex-end;
+}
+
+.TopicCard__aside {
+  padding-left: 10px;
+}
+
+.TopicCard__link {
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+  text-transform: uppercase;
+  color: firebrick;
+}
+
+.TopicCard__dt {
+  font-size: large;
+}
