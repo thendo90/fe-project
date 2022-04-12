@@ -50,16 +50,19 @@
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
-  font-size: 1.2em;
+  font-size: 1.05em;
 }
 
 .ArticlePage__comments {
-  font-size: large;
-  text-decoration: none;
-  background-color: firebrick;
+  align-self: center;
+  margin: 5%;
+  margin-bottom: 25%;
   padding: 10px;
   color: white;
+  background: firebrick;
+  text-decoration: none;
   border-radius: 20px;
-  align-self: center;
-  margin-bottom: 20%;
+  box-shadow: 2px 2px 2px black;
+  font-size: large;
+  margin-top: 10px;
 }

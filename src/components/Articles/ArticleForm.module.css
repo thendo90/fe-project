@@ -29,22 +29,25 @@
 
 .ArticleForm__title,
 .ArticleForm__body {
+  height: 25px;
   font-size: large;
   border-radius: 10px;
   border: 1px solid black;
   padding: 10px;
   background-color: snow;
+  transition-property: background-color, height;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
 }
 
-.ArticleForm__body {
-  height: 300px;
-}
-
-.ArticleForm__title,
-.ArticleForm__body .ArticleForm__title:focus,
-.ArticleForm__body:focus,
+.ArticleForm__title:focus,
 .ArticleForm__select:focus {
   background-color: blanchedalmond;
+}
+
+.ArticleForm__body:focus {
+  background-color: blanchedalmond;
+  height: 250px;
 }
 
 .ArticleForm__submit {
