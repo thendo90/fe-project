@@ -1,8 +1,10 @@
 .Account {
-  margin: 15%;
-  margin-top: 30%;
+  margin: 10%;
+  margin-left: auto;
+  margin-right: auto;
   border: 5px black solid;
   border-radius: 20px;
+  max-width: 500px;
 }
 .Account__form {
   padding: 20px;
@@ -43,6 +45,8 @@
 
 .Account__link {
   margin: 5%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px;
   color: white;
   background: firebrick;
@@ -51,6 +55,7 @@
   box-shadow: 2px 2px 2px black;
   font-size: 25px;
   margin-top: 10px;
+  max-width: 250px;
 }
 
 .Account__input {
@@ -73,4 +78,10 @@
 
 .Account__invalid {
   color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  .Account {
+    margin: 10%;
+  }
 }

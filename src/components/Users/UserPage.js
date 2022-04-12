@@ -27,13 +27,15 @@ export default function UserPage() {
         articles
       </h2>
 
-      {userArticles.map((article) => (
-        <ArticleCard
-          article={article}
-          key={`article-${article.article_id}`}
-          UserPage={true}
-        />
-      ))}
+      <section className={styles.UserPage__articleCardWrapper}>
+        {userArticles.map((article) => (
+          <ArticleCard
+            article={article}
+            key={`article-${article.article_id}`}
+            UserPage={true}
+          />
+        ))}
+      </section>
     </main>
   );
 }

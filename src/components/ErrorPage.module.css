@@ -1,14 +1,21 @@
 .ErrorPage {
-  margin: 0;
+  margin-left: 10%;
+  margin-left: 10%;
   position: absolute;
   top: 45%;
-  width: 100%;
+  width: 80%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
 .ErrorPage__link {
-  font-size: 2rem;
-  text-transform: uppercase;
+  margin: 5%;
+  padding: 10px;
+  color: white;
+  background: firebrick;
   text-decoration: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px black;
+  font-size: 25px;
+  margin-top: 10px;
 }

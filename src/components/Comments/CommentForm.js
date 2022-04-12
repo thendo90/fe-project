@@ -60,6 +60,7 @@ export default function CommentForm({ id, setCommentList }) {
         placeholder="post a comment..."
         className={styles.CommentForm__input}
       ></input>
+      <p>comment must be at least 10 characters</p>
       <button disabled={disableSubmit} className={styles.CommentForm__submit}>
         submit
       </button>

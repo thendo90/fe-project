@@ -20,14 +20,27 @@
 
 .CommentForm__input:focus {
   background-color: floralwhite;
-  width: 320px;
+  width: 800px;
   font-size: larger;
 }
 
 .CommentForm__submit {
+  border-radius: 10px;
   padding: 5px;
-  font-size: large;
+  font-size: larger;
   width: auto;
   align-self: center;
   margin-top: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .CommentForm__input:focus {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .CommentForm__input:focus {
+    width: 320px;
+  }
 }

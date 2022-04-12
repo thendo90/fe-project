@@ -4,6 +4,7 @@ import { UserContext } from "../../contexts/UserContext";
 import Date from "../Utils/Date";
 import Voter from "../Utils/Voter";
 import Delete from "../Utils/Delete";
+import { Link } from "react-router-dom";
 
 export default function CommentCard({ comment, setCommentList }) {
   const { loggedInUser } = useContext(UserContext);
@@ -24,16 +25,20 @@ export default function CommentCard({ comment, setCommentList }) {
 
   return (
     <div className={styles.CommentCard}>
-      <h2
-        className={
-          styles[
-            `CommentCard__${
-              loggedInUser.username !== author ? "author" : "you"
-            }`
-          ]
-        }
-      >
-        {loggedInUser.username !== author ? author : "you"}
+      <h2 className={styles.CommentCard__author}>
+        {loggedInUser.username !== author ? (
+          <Link
+            to={`/users/${author}`}
+            className={styles.CommentCard__linkAuthor}
+          >
+            {author}
+          </Link>
+        ) : (
+          <Link to={`/myacc`} className={styles.CommentCard__linkYou}>
+            you
+          </Link>
+        )}
+
         {loggedInUser.username !== author ? (
           <Voter type="comment" id={comment_id} apiVotes={votes} />
         ) : (

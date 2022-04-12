@@ -1,8 +1,9 @@
 .ArticlePage {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: start;
-  margin-top: 15%;
+  max-width: 750px;
+  margin-top: 200px;
 }
 
 .ArticlePage__headerWrap {
@@ -50,16 +51,35 @@
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
-  font-size: 1.2em;
+  font-size: 1.05em;
 }
 
 .ArticlePage__comments {
-  font-size: large;
-  text-decoration: none;
-  background-color: firebrick;
+  align-self: center;
+  margin: 5%;
   padding: 10px;
   color: white;
+  background: firebrick;
+  text-decoration: none;
   border-radius: 20px;
-  align-self: center;
-  margin-bottom: 20%;
+  box-shadow: 2px 2px 2px black;
+  font-size: large;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .ArticlePage {
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .ArticlePage {
+    margin-top: 15%;
+  }
+  .ArticlePage__comments {
+    margin-bottom: 25%;
+  }
 }

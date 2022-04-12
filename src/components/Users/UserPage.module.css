@@ -1,14 +1,46 @@
 .UserPage {
   margin-top: 5%;
   margin-bottom: 15%;
+  display: flex;
+  flex-direction: column;
 }
 
 .UserPage__h2 {
-  padding: 5%;
-  padding-left: 13%;
-  padding-right: 13%;
+  padding: 20px;
 }
 
 .UserPage__b {
   color: firebrick;
+}
+
+.UserPage__articleCardWrapper {
+  justify-content: center;
+  width: auto;
+  display: grid;
+  grid-template-columns: 380px 380px 380px;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+@media only screen and (max-width: 1170px) {
+  .UserPage__articleCardWrapper {
+    grid-template-columns: 380px 380px;
+    column-gap: 0;
+    row-gap: 0;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .UserPage__articleCardWrapper {
+    grid-template-columns: 380px;
+    column-gap: 0;
+    row-gap: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .UserPage__articleCardWrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }

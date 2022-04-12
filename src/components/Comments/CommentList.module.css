@@ -1,17 +1,20 @@
 .CommentList {
-  margin: 10%;
-  margin-bottom: 20%;
+  margin: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .CommentList__link {
-  font-size: large;
-  text-decoration: none;
-  background-color: firebrick;
+  align-self: center;
+  width: 150px;
+  margin: 50px;
   padding: 10px;
   color: white;
+  background: firebrick;
+  text-decoration: none;
   border-radius: 20px;
-  margin: 5%;
+  box-shadow: 2px 2px 2px black;
+  font-size: 25px;
+  margin-top: 10px;
 }

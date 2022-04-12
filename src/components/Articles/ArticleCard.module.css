@@ -59,3 +59,21 @@
 p {
   margin: 2px;
 }
+
+@media only screen and (max-width: 1170px) {
+  .ArticleCard {
+    margin: 10px;
+    width: 300px;
+    align-self: flex-end;
+    justify-self: center;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .ArticleCard {
+    max-width: 380px;
+    width: 80%;
+    margin: 8%;
+    align-self: center;
+  }
+}

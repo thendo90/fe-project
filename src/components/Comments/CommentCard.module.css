@@ -2,25 +2,35 @@
   padding: 10px;
   border-bottom: 3px solid lightgray;
   text-align: start;
-  min-width: 100%;
+  width: 520px;
 }
 
-.CommentCard__author,
-.CommentCard__you {
-  margin: 0;
+.CommentCard__author {
   margin-top: 25px;
   margin-bottom: -20px;
-  font-size: x-large;
-  color: firebrick;
-  text-decoration-color: black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.CommentCard__you {
-  color: green;
-  font-size: xx-large;
+.CommentCard__linkAuthor,
+.CommentCard__linkYou {
+  align-self: center;
+  margin-bottom: 5%;
+  padding: 10px;
+  color: white;
+  background: firebrick;
+  text-decoration: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px black;
+  font-size: large;
+  margin-top: 10px;
+}
+
+.CommentCard__linkYou {
+  background: green;
+  margin-bottom: 10%;
+  font-size: larger;
 }
 
 .CommentCard__body {
@@ -30,4 +40,10 @@
 .CommentCard__deleted {
   text-align: center;
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .CommentCard {
+    width: 100%;
+  }
 }
