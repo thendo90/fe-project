@@ -45,7 +45,7 @@ export default function ArticlePage() {
         {loggedInUser.username !== article.author ? (
           <Voter type="article" id={article_id} apiVotes={votes} />
         ) : (
-          <Delete type="article" id={article_id} deleted={setDeleted} />
+          <Delete type="article" id={article_id} setDeleted={setDeleted} />
         )}
       </section>
       {loggedInUser.username === article.author ? (
