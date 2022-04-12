@@ -45,7 +45,7 @@ export default function ArticleList() {
     <section className={styles.ArticleList}>
       {topic && (
         <h3 className={styles.ArticleList__h3}>
-          current topic <em className={styles.ArticleList__topic}>{topic}</em>
+          <em>{topic}</em>
         </h3>
       )}
 
@@ -59,14 +59,16 @@ export default function ArticleList() {
         Page {page} of {Math.ceil(total / 10)}
       </p>
 
-      {articleList.map((article) => {
-        return (
-          <ArticleCard
-            article={article}
-            key={`article-${article.article_id}`}
-          />
-        );
-      })}
+      <section className={styles.ArticleList__articleCardWrapper}>
+        {articleList.map((article) => {
+          return (
+            <ArticleCard
+              article={article}
+              key={`article-${article.article_id}`}
+            />
+          );
+        })}
+      </section>
 
       <section
         name="button wrapper"

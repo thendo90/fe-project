@@ -2,13 +2,12 @@
   padding: 10px;
   border-bottom: 3px solid lightgray;
   text-align: start;
-  min-width: 100%;
+  width: 520px;
 }
 
 .CommentCard__author {
   margin-top: 25px;
   margin-bottom: -20px;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -41,4 +40,10 @@
 .CommentCard__deleted {
   text-align: center;
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .CommentCard {
+    width: 100%;
+  }
 }

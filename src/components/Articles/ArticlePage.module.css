@@ -1,8 +1,9 @@
 .ArticlePage {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: start;
-  margin-top: 15%;
+  max-width: 750px;
+  margin-top: 200px;
 }
 
 .ArticlePage__headerWrap {
@@ -56,7 +57,6 @@
 .ArticlePage__comments {
   align-self: center;
   margin: 5%;
-  margin-bottom: 25%;
   padding: 10px;
   color: white;
   background: firebrick;
@@ -65,4 +65,21 @@
   box-shadow: 2px 2px 2px black;
   font-size: large;
   margin-top: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .ArticlePage {
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .ArticlePage {
+    margin-top: 15%;
+  }
+  .ArticlePage__comments {
+    margin-bottom: 25%;
+  }
 }

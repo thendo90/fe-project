@@ -1,6 +1,5 @@
 .CommentList {
-  margin: 10%;
-  margin-bottom: 20%;
+  margin: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +8,7 @@
 .CommentList__link {
   align-self: center;
   width: 150px;
-  margin: 5%;
+  margin: 50px;
   padding: 10px;
   color: white;
   background: firebrick;
