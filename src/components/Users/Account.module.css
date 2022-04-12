@@ -70,9 +70,6 @@
   width: 100%;
   font-size: larger;
 }
-.Account__input:invalid {
-  color: red;
-}
 
 .Account__invalid {
   color: red;

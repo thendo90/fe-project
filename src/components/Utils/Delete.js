@@ -1,25 +1,30 @@
 import styles from "./Delete.module.css";
 import React from "react";
-import { deleteComment } from "../api/api";
+import { deleteArticle, deleteComment } from "../api/api";
 
 export default function Delete({ id, type, setDeleted, setCommentList }) {
   const handleDelete = () => {
     setDeleted(true);
 
-    switch (type) {
-      case "comment":
-        deleteComment(id)
-          .then(() => {
-            setCommentList((prevList) => {
-              return [...prevList];
-            });
-          })
-          .catch((err) => {
-            setDeleted(false);
+    if (type === "comment") {
+      deleteComment(id)
+        .then(() => {
+          setCommentList((prevList) => {
+            return [...prevList];
           });
-        break;
-      default:
-        break;
+        })
+        .catch((err) => {
+          setDeleted(false);
+        });
+    }
+    if (type === "article") {
+      deleteArticle(id)
+        .then(() => {
+          setDeleted(true);
+        })
+        .catch((err) => {
+          setDeleted(false);
+        });
     }
   };
 

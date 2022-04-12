@@ -12,6 +12,7 @@ import ArticleList from "./components/Articles/ArticleList";
 import UserList from "./components/Users/UserList";
 import UserPage from "./components/Users/UserPage";
 import Account from "./components/Users/Account";
+import ArticleForm from "./components/Articles/ArticleForm";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
@@ -27,6 +28,7 @@ function App() {
         {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/articles/post" element={<ArticleForm />} />
           <Route path="/articles/:article_id" element={<ArticlePage />} />
           <Route
             path="/articles/:article_id/comments"

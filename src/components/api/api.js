@@ -20,6 +20,16 @@ export function getArticleById(id) {
   });
 }
 
+export function deleteArticle(id) {
+  return api.delete(`articles/${id}`);
+}
+
+export function postArticle(body) {
+  return api.post(`articles`, body).then(({ data }) => {
+    return data;
+  });
+}
+
 export function getTopics() {
   return api.get("/topics").then(({ data }) => {
     return data;
