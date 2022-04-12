@@ -33,6 +33,29 @@
   margin-top: 10px;
 }
 
+.CommentForm__inputInvalid {
+  margin-top: 5px;
+  font-weight: 500;
+  color: red;
+  text-align: left;
+  text-indent: 20px;
+}
+
+.CommentForm__inputInvalid::after {
+  content: "❌";
+}
+
+.CommentForm__inputValid {
+  margin-top: 5px;
+  color: green;
+  text-align: left;
+  text-indent: 20px;
+}
+
+.CommentForm__inputValid::after {
+  content: "✅";
+}
+
 @media only screen and (max-width: 1000px) {
   .CommentForm__input:focus {
     width: 600px;

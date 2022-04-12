@@ -20,9 +20,13 @@ export default function ArticleForm() {
     topic: true,
   });
   const [postedId, setPostedId] = useState(null);
+  const [toggleValidation, setToggleValidation] = useState({
+    title: false,
+    body: false,
+  });
 
   useEffect(() => {
-    if (article.title.length > 7) {
+    if (article.title.length >= 8) {
       setInputValidation((prev) => {
         return { ...prev, title: false };
       });
@@ -32,7 +36,7 @@ export default function ArticleForm() {
       });
     }
 
-    if (article.body.length >= 100) {
+    if (article.body.length >= 50) {
       setInputValidation((prev) => {
         return { ...prev, body: false };
       });
@@ -52,12 +56,19 @@ export default function ArticleForm() {
       });
     }
 
+    setToggleValidation({
+      title: article.title.length > 0,
+      body: article.body.length > 0,
+    });
+
     if (
       article.title.length >= 8 &&
       article.body.length >= 100 &&
       article.topic !== ""
     ) {
       setDisableSubmit(false);
+    } else {
+      setDisableSubmit(true);
     }
   }, [article]);
 
@@ -104,17 +115,17 @@ export default function ArticleForm() {
             onChange={handleChange}
             className={styles.ArticleForm__title}
           ></input>
-
-          <p
-            className={
-              inputValidation.title
-                ? styles.ArticleForm__inputInvalid
-                : styles.ArticleForm__inputValid
-            }
-          >
-            title must be at least 8 characters
-          </p>
-
+          {toggleValidation.title && (
+            <p
+              className={
+                inputValidation.title
+                  ? styles.ArticleForm__inputInvalid
+                  : styles.ArticleForm__inputValid
+              }
+            >
+              title must be at least 8 characters
+            </p>
+          )}
           <label htmlFor="body" className={styles.ArticleForm__label}>
             Body
           </label>
@@ -125,17 +136,17 @@ export default function ArticleForm() {
             onChange={handleChange}
             className={styles.ArticleForm__body}
           ></textarea>
-
-          <p
-            className={
-              inputValidation.body
-                ? styles.ArticleForm__inputInvalid
-                : styles.ArticleForm__inputValid
-            }
-          >
-            body must be at least 100 characters
-          </p>
-
+          {toggleValidation.body && (
+            <p
+              className={
+                inputValidation.body
+                  ? styles.ArticleForm__inputInvalid
+                  : styles.ArticleForm__inputValid
+              }
+            >
+              body must be at least 50 characters
+            </p>
+          )}
           <section className={styles.ArticleForm__topicButtonWrapper}>
             <label htmlFor="topic" className={styles.ArticleForm__topicLabel}>
               Topic
