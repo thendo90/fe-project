@@ -1,5 +1,5 @@
 import styles from "./CommentForm.module.css";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { makeComment } from "../api/api";
 
@@ -12,8 +12,21 @@ export default function CommentForm({ id, setCommentList }) {
   const [postSuccess, setPostSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [disableSubmit, setDisableSubmit] = useState(true);
+  const [inputValidation, setInputValidation] = useState(false);
+  const [showValidation, setShowValidation] = useState(false);
+
+  useEffect(() => {
+    if (comment.body.length > 9) {
+      setInputValidation(true);
+      setDisableSubmit(false);
+    } else {
+      setInputValidation(false);
+      setDisableSubmit(true);
+    }
+  }, [comment]);
 
   const handleChange = (event) => {
+    setShowValidation(true);
     setPostSuccess(false);
     setError(false);
 
@@ -38,6 +51,7 @@ export default function CommentForm({ id, setCommentList }) {
           return { ...prevComment, body: "" };
         });
         setPostSuccess(true);
+        setShowValidation(false);
       })
       .catch((err) => {
         setError(true);
@@ -60,12 +74,28 @@ export default function CommentForm({ id, setCommentList }) {
         placeholder="post a comment..."
         className={styles.CommentForm__input}
       ></input>
-      <p>comment must be at least 10 characters</p>
+      {showValidation && (
+        <p
+          className={
+            inputValidation
+              ? styles.CommentForm__inputValid
+              : styles.CommentForm__inputInvalid
+          }
+        >
+          comment must be at least 10 characters
+        </p>
+      )}
+      {postSuccess && (
+        <p className={styles.CommentForm__inputValid}>Comment posted!</p>
+      )}
+      {error && (
+        <p className={styles.CommentForm__inputInvalid}>
+          Something went wrong...
+        </p>
+      )}
       <button disabled={disableSubmit} className={styles.CommentForm__submit}>
         submit
       </button>
-      {postSuccess && <p>Comment posted!</p>}
-      {error && <p>Something went wrong...</p>}
     </form>
   );
 }
