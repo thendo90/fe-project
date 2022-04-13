@@ -63,7 +63,7 @@ export default function ArticleForm() {
 
     if (
       article.title.length >= 8 &&
-      article.body.length >= 100 &&
+      article.body.length >= 50 &&
       article.topic !== ""
     ) {
       setDisableSubmit(false);
