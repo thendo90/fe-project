@@ -20,12 +20,6 @@ npm start
 
 The minimum version of Node.js which I can endorse for running this project is v17.2.0
 
-## Pending features
-
-Some features left to add are:
-
-- make the design more responsive (currently only styled for mobile views)
-
 ## Built with
 
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces
