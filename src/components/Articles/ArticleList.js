@@ -12,9 +12,8 @@ export default function ArticleList() {
 
   const [articleList, setArticleList] = useState();
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
   const [total, setTotal] = useState();
-  const [query, setQuery] = useState({ p: page, topic });
+  const [query, setQuery] = useState({ p: 1, topic, limit: 6 });
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -28,12 +27,12 @@ export default function ArticleList() {
         setError(true);
         setLoading(false);
       });
-  }, [page, query]);
+  }, [query]);
 
   const handlePageTurn = (turn) => {
     setLoading(true);
-    setPage((currentPage) => {
-      return currentPage + turn;
+    setQuery((prev) => {
+      return { ...prev, p: prev.p + turn };
     });
   };
 
@@ -56,7 +55,7 @@ export default function ArticleList() {
       </p>
 
       <p className={styles.ArticleList__p}>
-        Page {page} of {Math.ceil(total / 10)}
+        Page {query.p} of {Math.ceil(total / query.limit)}
       </p>
 
       <section className={styles.ArticleList__articleCardWrapper}>
@@ -75,7 +74,7 @@ export default function ArticleList() {
         className={styles.ArticleList__button_wrapper}
       >
         <button
-          hidden={page === 1}
+          hidden={query.p === 1}
           className={styles.prev}
           onClick={() => {
             handlePageTurn(-1);
@@ -84,7 +83,7 @@ export default function ArticleList() {
           <b>previous</b>
         </button>
         <button
-          hidden={page === Math.ceil(total / 10)}
+          hidden={query.p === Math.ceil(total / query.limit)}
           className={styles.next}
           onClick={() => {
             handlePageTurn(1);
